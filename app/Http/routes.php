@@ -19,6 +19,18 @@ Route::get('about', function() {
 	return view('index');
 });
 
+Route::group(['prefix' => 'admission'], function () {
+    Route::get('inquire', function ()    {
+        // Matches The "/admin/users" URL
+    });
+
+    Route::get('organizational-chart', function ()    {
+        // Matches The "/admin/users" URL
+    });
+
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

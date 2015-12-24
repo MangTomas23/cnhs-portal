@@ -42,8 +42,8 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMISSION <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">INQUIRE</a></li>
-                  <li><a href="#">ORGANIZATIONAL CHART</a></li>
+                  <li><a href="/admission/inquire">INQUIRE</a></li>
+                  <li><a href="/admission/organizational-chart">ORGANIZATIONAL CHART</a></li>
                 </ul>
               </li>
               <li class="dropdown">
