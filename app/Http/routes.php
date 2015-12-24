@@ -21,11 +21,11 @@ Route::get('about', function() {
 
 Route::group(['prefix' => 'admission'], function () {
     Route::get('inquire', function ()    {
-        // Matches The "/admin/users" URL
+    	return view('admission.inquire');
     });
 
     Route::get('organizational-chart', function ()    {
-        // Matches The "/admin/users" URL
+    	return view('admission.organizational-chart');
     });
 
 });
