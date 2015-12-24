@@ -46,39 +46,39 @@ Route::group(['prefix' => 'academics'], function () {
 
 Route::group(['prefix' => 'department'], function () {
     Route::get('/', function ()    {
-        return view('academics.library');
+        return view('department.english');
     });
 
     Route::get('english', function ()    {
-        // return view('academics.highschool');
+        return view('department.english');
     });
 
     Route::get('mathematics', function ()    {
-        // return view('academics.highschool');
+        return view('department.mathematics');
     });
     
     Route::get('science', function ()    {
-        // return view('academics.highschool');
+        return view('department.science');
     });
     
     Route::get('araling-panlipunan', function ()    {
-        // return view('academics.highschool');
+        return view('department.araling-panlipunan');
     });
     
     Route::get('cp-tle', function ()    {
-        // return view('academics.highschool');
+        return view('department.tle');
     });
 
     Route::get('values-education', function ()    {
-        // return view('academics.highschool');
+        return view('department.values-education');
     });
 
     Route::get('filipino', function ()    {
-        // return view('academics.highschool');
+        return view('department.filipino');
     });
 
     Route::get('mapeh', function ()    {
-        // return view('academics.highschool');
+        return view('department.mapeh');
     });
 });
 
