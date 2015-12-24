@@ -83,6 +83,10 @@ Route::group(['prefix' => 'department'], function () {
 });
 
 
+Route::get('events', function () {
+    return view('events');
+});
+
 /*  
 |--------------------------------------------------------------------------
 | Application Routes
