@@ -31,15 +31,54 @@ Route::group(['prefix' => 'admission'], function () {
 
 Route::group(['prefix' => 'academics'], function () {
     Route::get('library', function ()    {
-    	return view('academics.library');
+        return view('academics.library');
     });
 
     Route::get('highschool', function ()    {
-    	return view('academics.highschool');
+        return view('academics.highschool');
     });
 
     Route::get('senior-highschool', function ()    {
-    	return view('academics.senior-highschool');
+        return view('academics.senior-highschool');
+    });
+});
+
+
+Route::group(['prefix' => 'department'], function () {
+    Route::get('/', function ()    {
+        return view('academics.library');
+    });
+
+    Route::get('english', function ()    {
+        // return view('academics.highschool');
+    });
+
+    Route::get('mathematics', function ()    {
+        // return view('academics.highschool');
+    });
+    
+    Route::get('science', function ()    {
+        // return view('academics.highschool');
+    });
+    
+    Route::get('araling-panlipunan', function ()    {
+        // return view('academics.highschool');
+    });
+    
+    Route::get('cp-tle', function ()    {
+        // return view('academics.highschool');
+    });
+
+    Route::get('values-education', function ()    {
+        // return view('academics.highschool');
+    });
+
+    Route::get('filipino', function ()    {
+        // return view('academics.highschool');
+    });
+
+    Route::get('mapeh', function ()    {
+        // return view('academics.highschool');
     });
 });
 
