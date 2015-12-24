@@ -56,7 +56,7 @@
               </li>
               <li><a href="/department">DEPARTMENT</a></li>
               <li><a href="/events">CALENDAR OF EVENTS</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 
               Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
