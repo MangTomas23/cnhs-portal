@@ -3,7 +3,7 @@
 @section('content')
 
 <div style="padding: 20px;">	
-	<h2>Inquire <span class="fa fa-search" style= "font-size: 30px;"></span></h2>
+	<h1>Inquire <span class="fa fa-search" style= "font-size: 30px;"></span></h1>
 
 	<h3>ACADEMIC POLICIES</h3> 
 
