@@ -54,7 +54,7 @@
                   <li><a href="/academics/senior-highschool">SENIOR HIGHSCHOOL</a></li>
                 </ul>
               </li>
-              <li><a href="#">DEPARTMENT</a></li>
+              <li><a href="/department">DEPARTMENT</a></li>
               <li><a href="#">CALENDAR OF EVENTS</a></li>
               <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 
               Login</a></li>
