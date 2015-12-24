@@ -46,7 +46,7 @@ Route::group(['prefix' => 'academics'], function () {
 
 Route::group(['prefix' => 'department'], function () {
     Route::get('/', function ()    {
-        return view('department.english');
+        return Redirect::to('/department/english');
     });
 
     Route::get('english', function ()    {
@@ -83,7 +83,7 @@ Route::group(['prefix' => 'department'], function () {
 });
 
 
-/*
+/*  
 |--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
