@@ -27,7 +27,20 @@ Route::group(['prefix' => 'admission'], function () {
     Route::get('organizational-chart', function ()    {
     	return view('admission.organizational-chart');
     });
+});
 
+Route::group(['prefix' => 'academics'], function () {
+    Route::get('library', function ()    {
+    	// return view('admission.inquire');
+    });
+
+    Route::get('highschool', function ()    {
+    	// return view('admission.organizational-chart');
+    });
+
+    Route::get('senior-highschool', function ()    {
+    	// return view('admission.organizational-chart');
+    });
 });
 
 
