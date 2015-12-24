@@ -49,9 +49,9 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACADEMICS <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">LIBRARY</a></li>
-                  <li><a href="#">HIGHSCHOOL</a></li>
-                  <li><a href="#">SENIOR HIGHSCHOOL</a></li>
+                  <li><a href="/academics/library">LIBRARY</a></li>
+                  <li><a href="/academics/highschool">HIGHSCHOOL</a></li>
+                  <li><a href="/academics/senior">SENIOR HIGHSCHOOL</a></li>
                 </ul>
               </li>
               <li><a href="#">DEPARTMENT</a></li>
