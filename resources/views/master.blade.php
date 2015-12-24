@@ -67,8 +67,8 @@
 
                     <ul class="dropdown-menu" role="menu">
                       @if(Auth::user()->type == 'admin')
-                        <li><a href="/admin/create-account"><i class="fa fa-user"></i> Create Accounts </a></li>
-                        <li><a href="/admin/register-subject"><i class="fa fa-registered"></i> Register Subject </a></li>
+                        <li><a href="/admin/account/create"><i class="fa fa-user"></i> Create Accounts </a></li>
+                        <li><a href="/admin/subject/register"><i class="fa fa-registered"></i> Register Subject </a></li>
                       @endif
                       <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i> Log Out</a></li>
                     </ul>

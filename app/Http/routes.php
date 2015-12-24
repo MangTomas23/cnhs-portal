@@ -108,12 +108,12 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::group(['prefix' => 'admin'], function () {
-        Route::get('create-account', function () {
-            return 'create-account';            
+        Route::get('account/create', function () {
+            return view('admin.account.create');            
         });
 
-        Route::get('register-subject', function () {
-            return 'register-subject';
+        Route::get('subject/register', function () {
+            return view('admin.subject.register');
         });
     });
 });
