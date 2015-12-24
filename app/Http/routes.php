@@ -11,83 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('about', function() {
-	return view('index');
-});
+// Route::get('login', 'LoginController@index');
 
-Route::group(['prefix' => 'admission'], function () {
-    Route::get('inquire', function ()    {
-    	return view('admission.inquire');
-    });
-
-    Route::get('organizational-chart', function ()    {
-    	return view('admission.organizational-chart');
-    });
-});
-
-Route::group(['prefix' => 'academics'], function () {
-    Route::get('library', function ()    {
-        return view('academics.library');
-    });
-
-    Route::get('highschool', function ()    {
-        return view('academics.highschool');
-    });
-
-    Route::get('senior-highschool', function ()    {
-        return view('academics.senior-highschool');
-    });
-});
-
-
-Route::group(['prefix' => 'department'], function () {
-    Route::get('/', function ()    {
-        return Redirect::to('/department/english');
-    });
-
-    Route::get('english', function ()    {
-        return view('department.english');
-    });
-
-    Route::get('mathematics', function ()    {
-        return view('department.mathematics');
-    });
-    
-    Route::get('science', function ()    {
-        return view('department.science');
-    });
-    
-    Route::get('araling-panlipunan', function ()    {
-        return view('department.araling-panlipunan');
-    });
-    
-    Route::get('cp-tle', function ()    {
-        return view('department.tle');
-    });
-
-    Route::get('values-education', function ()    {
-        return view('department.values-education');
-    });
-
-    Route::get('filipino', function ()    {
-        return view('department.filipino');
-    });
-
-    Route::get('mapeh', function ()    {
-        return view('department.mapeh');
-    });
-});
-
-
-Route::get('events', function () {
-    return view('events');
-});
-
-Route::get('login', 'LoginController@index');
+// Route::post('login', 'LoginController@authenticate');
 
 
 /*  
@@ -101,6 +28,83 @@ Route::get('login', 'LoginController@index');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/', function () {
+        return view('index');
+    });
+
+    Route::get('about', function() {
+        return view('index');
+    });
+
+    Route::group(['prefix' => 'admission'], function () {
+        Route::get('inquire', function ()    {
+            return view('admission.inquire');
+        });
+
+        Route::get('organizational-chart', function ()    {
+            return view('admission.organizational-chart');
+        });
+    });
+
+    Route::group(['prefix' => 'academics'], function () {
+        Route::get('library', function ()    {
+            return view('academics.library');
+        });
+
+        Route::get('highschool', function ()    {
+            return view('academics.highschool');
+        });
+
+        Route::get('senior-highschool', function ()    {
+            return view('academics.senior-highschool');
+        });
+    });
+
+
+    Route::group(['prefix' => 'department'], function () {
+        Route::get('/', function ()    {
+            return Redirect::to('/department/english');
+        });
+
+        Route::get('english', function ()    {
+            return view('department.english');
+        });
+
+        Route::get('mathematics', function ()    {
+            return view('department.mathematics');
+        });
+        
+        Route::get('science', function ()    {
+            return view('department.science');
+        });
+        
+        Route::get('araling-panlipunan', function ()    {
+            return view('department.araling-panlipunan');
+        });
+        
+        Route::get('cp-tle', function ()    {
+            return view('department.tle');
+        });
+
+        Route::get('values-education', function ()    {
+            return view('department.values-education');
+        });
+
+        Route::get('filipino', function ()    {
+            return view('department.filipino');
+        });
+
+        Route::get('mapeh', function ()    {
+            return view('department.mapeh');
+        });
+    });
+
+
+    Route::get('events', function () {
+        return view('events');
+    });
+
 });

@@ -10,7 +10,7 @@
 
 	  <div style="padding-top:30px" class="panel-body" >
 	    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-      <form id="loginform" class="form-horizontal" role="form" method="POST" action="{!! url('/auth/login') !!}">
+      <form id="loginform" class="form-horizontal" role="form" method="POST" action="/login">
 				{!! csrf_field() !!}
         <div style="margin-bottom: 25px" class="input-group">
 					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -28,6 +28,7 @@
         	</div>
         </div>
 				</form>   
+
       @if (count($errors) > 0)
         <div class="alert alert-danger">
           <ul>

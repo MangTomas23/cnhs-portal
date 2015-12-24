@@ -4,6 +4,11 @@
 
 @include('department.menu')
 
+@if(Auth::guest())
+	'nakaguset'
+@else
+	'dai guest'
+@endif
 
 					<p>
 						

@@ -56,8 +56,20 @@
               </li>
               <li><a href="/department">DEPARTMENT</a></li>
               <li><a href="/events">CALENDAR OF EVENTS</a></li>
-              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 
-              Login</a></li>
+              @if (Auth::guest())
+                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 
+                Login</a></li>
+              @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                      {{Auth::user()->type}}<span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                    </ul>
+                </li>
+              @endif
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
