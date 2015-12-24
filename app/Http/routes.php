@@ -31,15 +31,15 @@ Route::group(['prefix' => 'admission'], function () {
 
 Route::group(['prefix' => 'academics'], function () {
     Route::get('library', function ()    {
-    	// return view('admission.inquire');
+    	return view('academics.library');
     });
 
     Route::get('highschool', function ()    {
-    	// return view('admission.organizational-chart');
+    	return view('academics.highschool');
     });
 
     Route::get('senior-highschool', function ()    {
-    	// return view('admission.organizational-chart');
+    	return view('academics.senior-highschool');
     });
 });
 

@@ -51,7 +51,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="/academics/library">LIBRARY</a></li>
                   <li><a href="/academics/highschool">HIGHSCHOOL</a></li>
-                  <li><a href="/academics/senior">SENIOR HIGHSCHOOL</a></li>
+                  <li><a href="/academics/senior-highschool">SENIOR HIGHSCHOOL</a></li>
                 </ul>
               </li>
               <li><a href="#">DEPARTMENT</a></li>
