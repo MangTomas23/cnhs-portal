@@ -10,11 +10,11 @@
       <link rel="apple-touch-icon" href="apple-touch-icon.png">
       <!-- Place favicon.ico in the root directory -->
 
-      <link rel="stylesheet" href="css/normalize.css">
-      <link rel="stylesheet" href="css/main.css">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/font-awesome.min.css">
-      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/font-awesome.min.css">
+      <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
       <!--[if lt IE 8]>
@@ -34,7 +34,7 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">
-              <img class="navbar-image" src="img/smalllogo.png" align="left" alt=""><span>CNHS</span></a>
+              <img class="navbar-image" src="/img/smalllogo.png" align="left" alt=""><span>CNHS</span></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -68,20 +68,20 @@
       <div id="headerjumb" class="header-main">
         <div class="row">
             <div class="col-sm-3">
-                <center><img src="img/logo2.png" width="180px"></center>
+                <center><img src="/img/logo2.png" width="180px"></center>
             </div>
             <div class="col-sm-6">
-                <center><img src="img/headerschoolname.jpg" 
+                <center><img src="/img/headerschoolname.jpg" 
                 style="max-width: 750px; width:100%;"></center>
             </div>
             <div class="col-sm-3">
-                <center><img src="img/logoKNG2.png" width="180px"></center>
+                <center><img src="/img/logoKNG2.png" width="180px"></center>
             </div>
         </div>
       </div>
         
       <div class="container-fluid main-container">
-            @yield('content')
+        @yield('content')
       </div>
 
       <div class="footer-main">
@@ -124,11 +124,11 @@
       </footer>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-      <script src="js/plugins.js"></script>
-      <script src="js/main.js"></script>
-      <script src="js/jquery-2.1.4.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+      <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+      <script src="/js/plugins.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/jquery-2.1.4.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
 
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
       <script>
