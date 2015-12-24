@@ -88,11 +88,7 @@
       <p>Science and Technology , Engineering and Mathematics,(stem)</p>
     </div>
   </div>
-
-
-    
-    
-
+  
   <h3>TECH-VOC</h3>
   <hr>
   <div class="row">
@@ -113,8 +109,6 @@
       <p> Computer System Serving and Maintenance </p>
     </div>
   </div>
-</center>
-
 
 	<h3 style="text-align:center">For More Information about senior high go here 
 		<a href="http://www.deped.gov.ph/k-to-12/curriculum-guides/Academic-Track"> 
