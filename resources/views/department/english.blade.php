@@ -4,4 +4,6 @@
 
 @include('department.menu')
 
+
+
 @endsection
