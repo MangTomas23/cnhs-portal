@@ -107,4 +107,13 @@ Route::group(['middleware' => 'web'], function () {
         return view('events');
     });
 
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('create-account', function () {
+            return 'create-account';            
+        });
+
+        Route::get('register-subject', function () {
+            return 'register-subject';
+        });
+    });
 });
