@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -20,12 +21,18 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
+
+        <div class="container-fluid">
+            @yield('content')
+        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
