@@ -87,6 +87,10 @@ Route::get('events', function () {
     return view('events');
 });
 
+Route::get('login', function () {
+    return view('login');
+});
+
 /*  
 |--------------------------------------------------------------------------
 | Application Routes
