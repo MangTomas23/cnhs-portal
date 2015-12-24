@@ -4,12 +4,6 @@
 
 @include('department.menu')
 
-@if(Auth::guest())
-	'nakaguset'
-@else
-	'dai guest'
-@endif
-
 					<p>
 						
 						<h2> English Department </h2><br><br>
