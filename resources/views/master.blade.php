@@ -117,7 +117,7 @@
       </div>
       <span class="clearfix"></span>
       <footer class="container-fluid text-center" style = "background-color: #000023; color: white; padding-top:10px; padding-bottom:10px;">
-        <a href="#headerjumb" title="To Top">
+        <a id="scrollToTop" href="#headerjumb" title="To Top">
         <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
         <p>All Rights Reserved &copy;2015</p> 
@@ -129,6 +129,7 @@
       <script src="/js/main.js"></script>
       <script src="/js/jquery-2.1.4.min.js"></script>
       <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/script.js"></script>
 
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
       <script>
