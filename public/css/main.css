@@ -286,7 +286,7 @@ textarea {
   margin-top:-5px;
 }
 
-.footer-main {
+.footer-main, .header-main {
   color: #FFF;
   background: #000041;
 }
@@ -307,4 +307,11 @@ textarea {
 
 .main-container {
     min-height: 380px;
+}
+
+.header-main {
+    margin-bottom: 0; 
+    padding-top:30px;
+    padding-bottom:30px;
+    margin-top: -20px;
 }

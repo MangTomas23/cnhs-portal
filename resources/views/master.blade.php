@@ -62,6 +62,23 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+
+      <!-- header -->
+
+      <div id="headerjumb" class="header-main">
+        <div class="row">
+            <div class="col-sm-3">
+                <center><img src="img/logo2.png" width="180px"></center>
+            </div>
+            <div class="col-sm-6">
+                <center><img src="img/headerschoolname.jpg" 
+                style="max-width: 750px; width:100%;"></center>
+            </div>
+            <div class="col-sm-3">
+                <center><img src="img/logoKNG2.png" width="180px"></center>
+            </div>
+        </div>
+      </div>
         
       <div class="container-fluid main-container">
             @yield('content')
