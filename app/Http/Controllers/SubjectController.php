@@ -13,6 +13,8 @@ use Redirect;
 class SubjectController extends Controller
 {
     public function store(Request $request) {
+    	$redirect = '/admin/subject/register';
+
     	$validator = Validator::make($request->all(),[
     		'subject_code' => 'required|max:30|unique:subjects',
     		'description' => 'required|max:255',
@@ -20,7 +22,7 @@ class SubjectController extends Controller
     	]);
 
     	if($validator->fails()) {
-    		return Redirect::to('/admin/subject/register')->withErrors($validator)
+    		return Redirect::to($redirect)->withErrors($validator)
     		->withInput();
     	}
 
@@ -32,6 +34,6 @@ class SubjectController extends Controller
 
     	$subject->save();
 
-    	
+    	return Redirect::to($redirect)->with('status', 'Subject saved successfully');
     }
 }

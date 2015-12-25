@@ -9,6 +9,12 @@
 			<form action="/admin/subject" method="post">
 				{!! csrf_field() !!}
 				
+				@if(session('status'))
+					<div class="alert alert-info">
+						<p>{{ session('status') }}</p>
+					</div>
+				@endif
+								
 				<div class="row">
 					<div class="form-group col-sm-8 {{ $errors->has('subject_code') ? 
 					'has-error':'' }}">
