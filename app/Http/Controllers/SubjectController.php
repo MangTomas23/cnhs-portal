@@ -36,4 +36,9 @@ class SubjectController extends Controller
 
     	return Redirect::to($redirect)->with('status', 'Subject saved successfully');
     }
+
+    public function edit($id) {
+    	$subject = Subject::find($id);
+    	return view('admin.subject.edit', compact('subject'));
+    }
 }
