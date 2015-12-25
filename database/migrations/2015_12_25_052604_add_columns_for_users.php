@@ -16,6 +16,7 @@ class AddColumnsForUsers extends Migration
             $table->string('firstname');
             $table->string('middlename')->nullable();
             $table->string('lastname');
+            $table->integer('section')->nullable();
             $table->integer('year_level')->nullable();
             $table->string('gender');
             $table->date('birthdate');
@@ -42,6 +43,7 @@ class AddColumnsForUsers extends Migration
             $table->dropColumn('address');
             $table->dropColumn('contact');
             $table->dropColumn('position');
+            $table->dropColumn('section');
         });
     }
 }
