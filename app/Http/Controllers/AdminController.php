@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Redirect;
 use Validator;
 use App\User;
+use App\Subject;
 
 class AdminController extends Controller
 {
@@ -18,7 +19,9 @@ class AdminController extends Controller
   }
 
   public function subjectRegistration() {
-    return view('admin.subject.register');            
+  	$subjects = Subject::all();			
+
+    return view('admin.subject.register', compact('subjects'));            
   }
 
   public function storeAccount(Request $request) {

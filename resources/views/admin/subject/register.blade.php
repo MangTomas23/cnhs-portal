@@ -54,4 +54,25 @@
 	</div>
 </div>
 	
+<div class="row col-sm-10 col-sm-offset-1">
+	<div class="panel panel-default">
+		<div class="panel-heading">Subject List</div>
+		<table class="table table-default">
+			<thead>
+				<th>Subject Code</th>
+				<th>Description</th>
+				<th>Year Level</th>
+			</thead>			
+			<tbody>
+				@foreach($subjects as $subject)
+					<tr>
+						<td>{{ $subject->subject_code }}</td>
+						<td>{{ $subject->description }}</td>
+						<td>{{ $subject->year_level }}</td>
+					</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</div>
+</div>
 @endsection

@@ -32,6 +32,6 @@ class SubjectController extends Controller
 
     	$subject->save();
 
-
+    	
     }
 }
