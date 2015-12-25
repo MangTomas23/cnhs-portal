@@ -51,4 +51,10 @@ class AdminController extends Controller
 		return $user->save() ? Redirect::to('/admin/account/create')
 		->with('status', 'Account created successfully.'):'Error';
 
-  }}
+  }
+
+  public function getUsers() {
+  	$users = User::where('type', '!=', 'admin')->get();
+		return view('admin.users', compact('users'));  	
+  }
+}

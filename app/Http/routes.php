@@ -113,5 +113,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('subject/register', 'AdminController@subjectRegistration');
 
         Route::post('create', 'AdminController@storeAccount');
+
+        Route::get('users', 'AdminController@getUsers');
     });
 });
