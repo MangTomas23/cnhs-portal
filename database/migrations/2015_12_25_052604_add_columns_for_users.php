@@ -16,7 +16,7 @@ class AddColumnsForUsers extends Migration
             $table->string('firstname');
             $table->string('middlename')->nullable();
             $table->string('lastname');
-            $table->integer('year_level');
+            $table->integer('year_level')->nullable();
             $table->string('gender');
             $table->date('birthdate');
             $table->string('address')->nullable();
