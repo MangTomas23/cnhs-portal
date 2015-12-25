@@ -30,12 +30,12 @@
 
 					<div class="form-group col-sm-4">
 						<label for="year_level">Year Level</label>
-						<select name="year_level" class="form-control">
-							<option value="1">1st Year</option>
-							<option value="2">2nd Year</option>
-							<option value="3">3rd Year</option>
-							<option value="4">4th Year</option>
-						</select>
+						{!! Form::select('year_level',[
+							1 => '1st Year',
+							2 => '2nd Year',
+							3 => '3rd Year',
+							4 => '4th Year',
+						],$subject->year_level, ['class' => 'form-control']) !!}
 					</div>
 				</div>
 
