@@ -7,6 +7,12 @@
 
 <div class="panel panel-default col-sm-8">
 	<div class="panel-body">
+		@if(session('status'))
+			<div class="alert alert-success">
+				<p>{{session('status')}}</p>	
+			</div>
+		@endif
+
 		<form action="/admin/create" method="post">
 			{!! csrf_field() !!}
 			<h3>Account</h3>

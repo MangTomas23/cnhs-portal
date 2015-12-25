@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Redirect;
 use Validator;
-use User;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -34,7 +34,21 @@ class AdminController extends Controller
 		}
 
 		$user = new User;
+		$user->username = $request->username;
+		$user->password = bcrypt($request->password);
+		$user->type = $request->type;
+		$user->firstname = $request->firstname;
+		$user->middlename = $request->middlename;
+		$user->lastname = $request->lastname;
+		$user->section = $request->section;
+		$user->year_level = $request->yearlevel;
+		$user->gender = $request->gender;
+		$user->birthdate = $request->birthdate;
+		$user->address = $request->address;
+		$user->contact = $request->contact;
+		
 
-		return 'success';
+		return $user->save() ? Redirect::to('/admin/account/create')
+		->with('status', 'Account created successfully.'):'Error';
 
   }}
