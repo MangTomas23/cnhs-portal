@@ -118,6 +118,9 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::post('subject', 'SubjectController@store');
 
+        Route::put('subject/{id}', 'SubjectController@update');
+
         Route::get('subject/edit/{id}', 'SubjectController@edit');
+
     });
 });

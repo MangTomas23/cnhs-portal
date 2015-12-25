@@ -6,8 +6,9 @@
 	<div class="panel panel-success" style="margin-top: 28px;">
 		<div class="panel-heading">Edit Subject</div>
 		<div class="panel-body">
-			<form action="/admin/subject" method="post">
+			<form action="/admin/subject/{{ $subject->id }}" method="POST">
 				{!! csrf_field() !!}
+				<input type="hidden" name="_method" value="PUT">
 				
 				@if(session('status'))
 					<div class="alert alert-info">
