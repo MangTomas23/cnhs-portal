@@ -68,6 +68,7 @@
 				<th>Subject Code</th>
 				<th>Description</th>
 				<th>Year Level</th>
+				<th></th>
 			</thead>			
 			<tbody>
 				@foreach($subjects as $subject)
@@ -75,6 +76,10 @@
 						<td>{{ $subject->subject_code }}</td>
 						<td>{{ $subject->description }}</td>
 						<td>{{ $subject->year_level }}</td>
+						<td>
+							<a href="/admin/subject/edit/{{ $subject->id }}">Edit</a> 
+							<a href="/admin/subject/delete/{{ $subject->id }}">Delete</a>
+						</td>
 					</tr>
 				@endforeach
 			</tbody>
