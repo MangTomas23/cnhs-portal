@@ -65,4 +65,14 @@ class SubjectController extends Controller
 
     	return Redirect::to('/admin/subject/register');
     }
+
+    public function delete($id) {
+    	$subject = Subject::find($id);
+    	return view('admin.subject.delete', compact('subject'));
+    }
+
+    public function destroy($id) {
+    	Subject::destroy($id);
+    	return Redirect::to('/admin/subject/register');
+    }
 }

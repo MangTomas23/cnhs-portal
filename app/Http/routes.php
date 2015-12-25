@@ -120,7 +120,11 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::put('subject/{id}', 'SubjectController@update');
 
+        Route::delete('subject/{id}', 'SubjectController@destroy');
+
         Route::get('subject/edit/{id}', 'SubjectController@edit');
+
+        Route::get('subject/delete/{id}', 'SubjectController@delete');
 
     });
 });
