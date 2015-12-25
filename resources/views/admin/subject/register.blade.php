@@ -12,12 +12,13 @@
 			<div class="row">
 				<div class="form-group col-md-8">
 					<label for="username">Username/Student ID</label>
-					<input name="username" type="text" class="form-control" placeholder="Username">
+					<input name="username" type="text" class="form-control" 
+					placeholder="Username" value="{{ old('username') }}">
 				</div>
 
 				<div class="form-group col-md-4">
 					<label for="type">Type</label>
-					<select name="type" id="" class="form-control">
+					<select name="type" id="" class="form-control" value="{{ old('type') }}">
 						<option value="student">Student</option>		
 						<option value="teacher">Teacher</option>		
 						<option value="programhead">Program Head</option>		

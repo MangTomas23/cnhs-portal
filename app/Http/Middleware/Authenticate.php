@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use AuthenticatesAndRegistersUse;
+use Auth;
 
 class Authenticate
 {

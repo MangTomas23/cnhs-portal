@@ -107,13 +107,9 @@ Route::group(['middleware' => 'web'], function () {
         return view('events');
     });
 
-    Route::group(['prefix' => 'admin'], function () {
-        Route::get('account/create', function () {
-            return view('admin.account.create');            
-        });
+    Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+        Route::get('account/create', 'AdminController@registrationForm');
 
-        Route::get('subject/register', function () {
-            return view('admin.subject.register');
-        });
+        Route::get('subject/register', 'AdminController@subjectRegistration');
     });
 });
