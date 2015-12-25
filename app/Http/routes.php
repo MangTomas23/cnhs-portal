@@ -115,5 +115,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('create', 'AdminController@storeAccount');
 
         Route::get('users', 'AdminController@getUsers');
+
+        Route::post('subject', 'SubjectController@store');
     });
 });
