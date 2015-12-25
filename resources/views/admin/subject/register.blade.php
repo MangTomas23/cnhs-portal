@@ -10,10 +10,16 @@
 				{!! csrf_field() !!}
 				
 				<div class="row">
-					<div class="form-group col-sm-8">
+					<div class="form-group col-sm-8 {{ $errors->has('subject_code') ? 
+					'has-error':'' }}">
 						<label for="subject_code">Subject Code</label>
 						<input type="text" class="form-control" name="subject_code" 
 						value="{{ old('subject_code') }}">
+						@if($errors->has('subject_code'))
+							<span class="help-block">
+								<strong>{{ $errors->first('subject_code') }}</strong>
+							</span>
+						@endif
 					</div>
 
 					<div class="form-group col-sm-4">
@@ -27,10 +33,17 @@
 					</div>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group {{ $errors->has('description') ? 
+				'has-error':''}}">
 					<label for="description">Description</label>
 					<input type="text" name="description" class="form-control" 
 					value="{{ old('description') }}">
+
+					@if($errors->has('description'))
+						<span class="help-block">
+							<strong>{{ $errors->first('description') }}</strong>
+						</span>
+					@endif
 				</div>
 
 		</div>

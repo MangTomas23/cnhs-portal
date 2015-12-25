@@ -20,7 +20,8 @@ class SubjectController extends Controller
     	]);
 
     	if($validator->fails()) {
-    		return Redirect::to('/admin/subject/register')->withErrors($validator);
+    		return Redirect::to('/admin/subject/register')->withErrors($validator)
+    		->withInput();
     	}
 
     	$subject = new Subject;
