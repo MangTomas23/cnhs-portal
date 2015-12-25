@@ -12,7 +12,7 @@
 				<div class="row">
 					<div class="form-group col-sm-8">
 						<label for="subject_code">Subject Code</label>
-						<input type="text" class="form-control" 
+						<input type="text" class="form-control" name="subject_code" 
 						value="{{ old('subject_code') }}">
 					</div>
 
@@ -29,7 +29,7 @@
 
 				<div class="form-group">
 					<label for="description">Description</label>
-					<input type="text" class="form-control" 
+					<input type="text" name="description" class="form-control" 
 					value="{{ old('description') }}">
 				</div>
 
