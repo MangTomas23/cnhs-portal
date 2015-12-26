@@ -127,9 +127,9 @@ Route::group(['middleware' => 'web'], function () {
          });
 
         Route::group(['prefix' => 'user'], function () {
-            Route::get('/', 'AdminController@getUsers');
+            Route::get('/', 'UserController@index');
 
-            Route::get('{id}', 'AdminController@show');
+            Route::get('{id}', 'UserController@show');
         });
 
     });
