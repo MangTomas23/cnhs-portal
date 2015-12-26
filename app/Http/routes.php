@@ -136,6 +136,8 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::group(['prefix' => 'section'], function () {
             Route::get('/', 'SectionController@index');
+
+            Route::post('/', 'SectionController@store');
         });
 
     });
