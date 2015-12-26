@@ -32,6 +32,37 @@ class SectionController extends Controller
     	$section->save();
 
     	return Redirect::to('/admin/section');
+    }
 
+    public function edit($id) {
+			$section = Section::find($id);
+    	return view('admin.section.edit', compact('section'));
+    }
+
+    public function delete($id) {
+    	$section = Section::find($id);
+    	return view('admin.section.delete', compact('section'));
+    }
+
+    public function update($id, Request $request) {
+    	$validator = Validator::make($request->all(),[
+    		'name' => 'required|max:20'
+    	]);
+
+    	if($validator->fails()) {
+    		return Redirect::to('/admin/section/edit/' . $id)->withErrors($validator);
+    	}
+
+    	$section = Section::find($id);
+
+    	$section->name = $request->name;
+    	$section->save();
+
+    	return Redirect::to('/admin/section');
+    }
+
+    public function destroy($id) {
+			Section::destroy($id);    	
+    	return Redirect::to('/admin/section');
     }
 }

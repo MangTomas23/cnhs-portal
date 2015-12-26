@@ -131,13 +131,21 @@ Route::group(['middleware' => 'web'], function () {
 
             Route::get('{id}', 'UserController@show');
 
-            Route::put('/{id}', 'UserController@update');
+            Route::put('{id}', 'UserController@update');
         });
 
         Route::group(['prefix' => 'section'], function () {
             Route::get('/', 'SectionController@index');
 
             Route::post('/', 'SectionController@store');
+
+            Route::get('edit/{id}', 'SectionController@edit');
+
+            Route::get('delete/{id}', 'SectionController@delete');
+
+            Route::put('{id}', 'SectionController@update');
+
+            Route::delete('{id}', 'SectionController@destroy');
         });
 
     });
