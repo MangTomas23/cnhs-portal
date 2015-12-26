@@ -10,12 +10,21 @@ use Redirect;
 use Validator;
 use App\User;
 use App\Subject;
+use App\Section;
 
 class AdminController extends Controller
 {
 
   public function registrationForm() {
-    return view('admin.account.create');            
+  	$sections = array();
+
+  	foreach (Section::all() as $key => $section) {
+  		array_push($sections, [$section->id => $section->name]);
+  	}
+
+  	// return $sections;
+
+    return view('admin.account.create', compact('sections'));            
   }
 
   public function subjectRegistration() {

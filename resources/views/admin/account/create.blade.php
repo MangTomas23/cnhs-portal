@@ -93,7 +93,10 @@
 			<div class="row">
 				<div class="form-group col-sm-8">
 					<label for="section">Section</label>
-					<input type="text" name="section" class="form-control" value="{{ old('section') }}">
+					{!!  
+						Form::select('section', $sections, old('section'), 
+						['class' => 'form-control'])
+					!!}
 				</div>
 
 				<div class="form-group col-sm-4">
