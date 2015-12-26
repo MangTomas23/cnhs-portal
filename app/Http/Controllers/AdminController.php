@@ -16,13 +16,7 @@ class AdminController extends Controller
 {
 
   public function registrationForm() {
-  	$sections = array();
-
-  	foreach (Section::all() as $key => $section) {
-  		array_push($sections, [$section->id => $section->name]);
-  	}
-
-  	// return $sections;
+  	$sections = Section::lists('name', 'id');
 
     return view('admin.account.create', compact('sections'));            
   }
@@ -52,7 +46,7 @@ class AdminController extends Controller
 		$user->firstname = $request->firstname;
 		$user->middlename = $request->middlename;
 		$user->lastname = $request->lastname;
-		$user->section = $request->section;
+		$user->section_id = $request->section;
 		$user->year_level = $request->yearlevel;
 		$user->gender = $request->gender;
 		$user->birthdate = $request->birthdate;

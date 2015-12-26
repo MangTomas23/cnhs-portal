@@ -51,8 +51,10 @@
 					<div class="row">
 						<div class="form-group col-sm-8">
 							<label for="section">Section</label>
-							<input name="section" type="text" class="form-control" 
-							value="{{ $user->section }}">
+							{!! 
+								Form::select('section', $sections, $user->section_id, [
+								'class' => 'form-control']);
+							!!}
 						</div>
 
 						<div class="form-group col-sm-4">
