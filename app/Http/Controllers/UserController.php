@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Section;
 use App\Subject;
+use App\StudentSubject;
 use Validator;
 use Redirect;
 
@@ -22,7 +23,7 @@ class UserController extends Controller
 	public function show($id) {
 		$user = User::find($id);
 		$sections = Section::lists('name', 'id');
-		$subjects = Subject::all();
+		$subjects = $user->subjects;
 
 		return view('admin.user.show', compact('user', 'sections', 'subjects'));
 	}

@@ -132,6 +132,10 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('{id}', 'UserController@show');
 
             Route::put('{id}', 'UserController@update');
+            
+            Route::get('{id}/subject/add', 'StudentSubjectController@create');
+
+            Route::post('{id}/subject', 'StudentSubjectController@store');
         });
 
         Route::group(['prefix' => 'section'], function () {

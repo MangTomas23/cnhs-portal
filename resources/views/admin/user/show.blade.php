@@ -124,8 +124,8 @@
 						@foreach($subjects as $index => $subject)
 							<tr>
 								<td>{{ $index + 1 }}</td>
-								<td>{{ $subject->subject_code }}</td>
-								<td>{{ $subject->description }}</td>
+								<td>{{ $subject->subject->subject_code }}</td>
+								<td>{{ $subject->subject->description }}</td>
 								<td>
 									<a href="" style="color:red" title="Remove">
 										<span class="glyphicon glyphicon-remove"></span>
@@ -142,7 +142,7 @@
 			</table>
 		</div>
 		<div class="panel-footer text-right">
-			<a href="" class="btn btn-info">Add</a>
+			<a href="/admin/user/{{ $user->id }}/subject/add" class="btn btn-info">Add</a>
 			<a href="" class="btn btn-danger">Remove All</a>
 		</div>
 	</div>
