@@ -8,7 +8,7 @@
 				{{ join(' ', [$user->firstname, $user->middlename, $user->lastname]) }}
 			</div>
 			<div class="panel-body">
-				<form action="/admin/user" method="POST">
+				<form action="/admin/user/{{ $user->id }}" method="POST">
 					{!! csrf_field() !!}
 					<input type="hidden" name="_method" value="PUT">
 
@@ -17,10 +17,16 @@
 					<hr>
 
 					<div class="row">
-						<div class="form-group col-sm-4">
+						<div class="form-group col-sm-4 
+						{{ $errors->has('firstname') ? 'has-error':'' }}">
 							<label for="firstname">Firstname</label>
 							<input name="firstname" type="text" class="form-control" 
 							value="{{ $user->firstname }}">
+							@if($errors->has('firstname'))
+								<span class="help-block">
+									<strong>{{ $errors->first('firstname') }}</strong>
+								</span>
+							@endif
 						</div>
 
 						<div class="form-group col-sm-4">
@@ -29,10 +35,16 @@
 							value="{{ $user->middlename }}">
 						</div>
 
-						<div class="form-group col-sm-4">
+						<div class="form-group col-sm-4 
+						{{ $errors->has('lastname') ? 'has-error':'' }}">
 							<label for="lastname">Lastname</label>
 							<input name="lastname" type="text" class="form-control" 
 							value="{{ $user->lastname }}">
+							@if($errors->has('lastname'))
+								<span class="help-block">
+									<strong>{{ $errors->first('lastname') }}</strong>		
+								</span>
+							@endif
 						</div>
 					</div>
 

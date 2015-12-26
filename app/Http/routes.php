@@ -130,6 +130,8 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('/', 'UserController@index');
 
             Route::get('{id}', 'UserController@show');
+
+            Route::put('/{id}', 'UserController@update');
         });
 
     });
