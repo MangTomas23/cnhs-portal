@@ -134,5 +134,9 @@ Route::group(['middleware' => 'web'], function () {
             Route::put('/{id}', 'UserController@update');
         });
 
+        Route::group(['prefix' => 'section'], function () {
+            Route::get('/', 'SectionController@index');
+        });
+
     });
 });
