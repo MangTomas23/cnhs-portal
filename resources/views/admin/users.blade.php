@@ -18,7 +18,7 @@
 	<tbody>
 		@foreach($users as $user)
 			<tr>
-				<td>{{ $user->username }}</td>
+				<td><a href="/admin/user/{{ $user->id }}">{{ $user->username }}</a></td>
 				<td>{{ join(' ', [$user->firstname, $user->middlename, $user->lastname]) }}</td>
 				<td>{{ $user->address }}</td>
 				<td>

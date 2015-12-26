@@ -110,21 +110,27 @@ Route::group(['middleware' => 'web'], function () {
     Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('account/create', 'AdminController@registrationForm');
 
-        Route::get('subject/register', 'AdminController@subjectRegistration');
-
         Route::post('create', 'AdminController@storeAccount');
 
-        Route::get('users', 'AdminController@getUsers');
+        Route::group(['prefix' => 'subject'], function () {
+            Route::get('register', 'AdminController@subjectRegistration');
 
-        Route::post('subject', 'SubjectController@store');
+            Route::post('/', 'SubjectController@store');
 
-        Route::put('subject/{id}', 'SubjectController@update');
+            Route::put('{id}', 'SubjectController@update');
 
-        Route::delete('subject/{id}', 'SubjectController@destroy');
+            Route::delete('{id}', 'SubjectController@destroy');
 
-        Route::get('subject/edit/{id}', 'SubjectController@edit');
+            Route::get('edit/{id}', 'SubjectController@edit');
 
-        Route::get('subject/delete/{id}', 'SubjectController@delete');
+            Route::get('delete/{id}', 'SubjectController@delete');
+         });
+
+        Route::group(['prefix' => 'user'], function () {
+            Route::get('/', 'AdminController@getUsers');
+
+            Route::get('{id}', 'AdminController@show');
+        });
 
     });
 });
