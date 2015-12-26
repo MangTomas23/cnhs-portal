@@ -16,7 +16,9 @@ class AddColumnsForUsers extends Migration
             $table->string('firstname');
             $table->string('middlename')->nullable();
             $table->string('lastname');
-            $table->integer('section')->nullable();
+            $table->integer('section_id')->unsigned()->nullable();
+            $table->foreign('section_id')->references('id')->on('sections')
+            ->onDelete('set null');
             $table->integer('year_level')->nullable();
             $table->string('gender');
             $table->date('birthdate');
