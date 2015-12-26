@@ -40,7 +40,7 @@ class UserController extends Controller
 		$user->firstname = $request->firstname;
 		$user->middlename = $request->middlename;
 		$user->lastname = $request->lastname;
-		$user->section = $request->section;
+		$user->section_id = $request->section;
 		$user->year_level = $request->year_level;
 		$user->gender = $request->gender;
 		$user->birthdate = $request->birthdate;
