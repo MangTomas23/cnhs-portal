@@ -3,9 +3,7 @@
 @section('content')
 
 
-<h2>Register</h2>
-
-<div class="panel panel-default col-sm-8">
+<div class="panel panel-default col-sm-8 col-sm-offset-2" style="margin-top:28px">
 	<div class="panel-body">
 		@if(session('status'))
 			<div class="alert alert-success">
@@ -15,7 +13,7 @@
 
 		<form action="/admin/create" method="post">
 			{!! csrf_field() !!}
-			<h3>Account</h3>
+			<h3>Create Account</h3>
 			<hr>
 			<div class="row">
 				<div class="form-group col-md-8 {{ $errors->has('username') ? 'has-error':'' }}">

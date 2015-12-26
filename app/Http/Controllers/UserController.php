@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Section;
+use App\Subject;
 use Validator;
 use Redirect;
 
@@ -21,8 +22,9 @@ class UserController extends Controller
 	public function show($id) {
 		$user = User::find($id);
 		$sections = Section::lists('name', 'id');
+		$subjects = Subject::all();
 
-		return view('admin.user.show', compact('user', 'sections'));
+		return view('admin.user.show', compact('user', 'sections', 'subjects'));
 	}
 
 	public function update($id, Request $request) {
