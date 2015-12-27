@@ -31,6 +31,7 @@
 		<thead>
 			<th>#</th>
 			<th>Section</th>
+			<th>No of Students</th>
 			<th></th>
 		</thead>
 		<tbody>
@@ -43,6 +44,7 @@
 					<tr>
 						<td>{{ $index + 1 }}</td>
 						<td>{{ $section->name }}</td>
+						<td>{{ count($section->students) }}</td>
 						<td class="text-right">
 							<a href="/admin/section/edit/{{ $section->id }}">Edit</a> 
 							<a href="/admin/section/delete/{{ $section->id }}">Delete</a> 
