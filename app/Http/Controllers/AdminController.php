@@ -47,7 +47,13 @@ class AdminController extends Controller
 		$user->firstname = $request->firstname;
 		$user->middlename = $request->middlename;
 		$user->lastname = $request->lastname;
-		$user->year_level = $request->yearlevel;
+
+		if($request->type == 'student') {
+			$user->year_level = $request->yearlevel;
+		}else {
+			$user->position = $request->position;
+		}
+
 		$user->gender = $request->gender;
 		$user->birthdate = $request->birthdate;
 		$user->address = $request->address;
