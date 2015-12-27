@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'firstname' => ' ',
             'lastname' => ' ',
             'gender' => 'm',
-        	'birthdate' => '0000-00-00',
+        	'birthdate' => '1994-11-13'
         ]);
     }
 }
