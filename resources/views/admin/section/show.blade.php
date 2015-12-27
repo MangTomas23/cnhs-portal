@@ -11,13 +11,21 @@
 			<th>#</th>
 			<th>Name</th>
 		</thead>
-			@foreach($section->students as $index =>  $student)
-				<?php $student = $student->user; ?>
+			@if(count($section->students))
+				@foreach($section->students as $index =>  $student)
+					<?php $student = $student->user; ?>
+					<tr>
+						<td>{{ $index + 1 }}</td>
+						<td>{{ join(' ', [$student->firstname, $student->middlename, $student->lastname]) }}</td>
+					</tr>
+				@endforeach
+			@else
 				<tr>
-					<td>{{ $index + 1 }}</td>
-					<td>{{ join(' ', [$student->firstname, $student->middlename, $student->lastname]) }}</td>
+					<td colspan="2">
+						No students.
+					</td>
 				</tr>
-			@endforeach
+			@endif
 		<tbody>
 			
 		</tbody>
