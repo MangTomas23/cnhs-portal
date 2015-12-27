@@ -168,7 +168,7 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::get('developer/run-seed', function () {
-        Artisan::call('db:seed -n');
+        Artisan::call('db:seed',['--no-interaction' => 'n']);
 
         return Artisan::output();
     });
