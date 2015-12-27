@@ -29,4 +29,24 @@ class StudentSubjectController extends Controller
 
 		return Redirect::to('/admin/user/' . $id);
 	}
+
+	public function delete($id, $s_id) {
+		$subject = StudentSubject::find($s_id);
+		return view('admin.user.subject.delete', compact('subject','id'));
+	}
+
+	public function destroy($id, Request $request) {
+		StudentSubject::destroy($request->s_id);
+		return Redirect::to('/admin/user/' . $id);
+	}
+
+	public function deleteAll($id) {
+		return view('admin.user.subject.delete-all', compact('id'));
+	}
+
+	public function destroyAll($id) {
+		StudentSubject::where('user_id', $id)->delete();
+
+		return Redirect::to('/admin/user/' . $id);
+	}
 }

@@ -127,7 +127,8 @@
 								<td>{{ $subject->subject->subject_code }}</td>
 								<td>{{ $subject->subject->description }}</td>
 								<td>
-									<a href="" style="color:red" title="Remove">
+									<a href="/admin/user/{{ $user->id }}/subject/delete/
+									{{ $subject->id }}" style="color:red" title="Remove">
 										<span class="glyphicon glyphicon-remove"></span>
 									</a>
 								</td>
@@ -143,7 +144,8 @@
 		</div>
 		<div class="panel-footer text-right">
 			<a href="/admin/user/{{ $user->id }}/subject/add" class="btn btn-info">Add</a>
-			<a href="" class="btn btn-danger">Remove All</a>
+			<a href="/admin/user/{{ $user->id }}/subject/delete/all" 
+			class="btn btn-danger">Remove All</a>
 		</div>
 	</div>
 </div>
