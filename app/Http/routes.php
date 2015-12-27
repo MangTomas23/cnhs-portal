@@ -162,4 +162,14 @@ Route::group(['middleware' => 'web'], function () {
         });
 
     });
+
+    Route::get('developer', function () {
+        return view('developer');
+    });
+
+    Route::get('developer/run-seed', function () {
+        Artisan::call('db:seed');
+
+        return Artisan::output();
+    });
 });
