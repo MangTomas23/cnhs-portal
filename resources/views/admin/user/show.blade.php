@@ -47,28 +47,38 @@
 							@endif
 						</div>
 					</div>
+					
+					@if($user->type == 'student')
+						<div class="row">
+							<div class="form-group col-sm-8">
+								<label for="section">Section</label>
+								{!! 
+									Form::select('section', $sections, $user->section->section_id, [
+									'class' => 'form-control']);
+								!!}
+							</div>
 
-					<div class="row">
-						<div class="form-group col-sm-8">
-							<label for="section">Section</label>
-							{!! 
-								Form::select('section', $sections, $user->section->section_id, [
-								'class' => 'form-control']);
-							!!}
+							<div class="form-group col-sm-4">
+								<label for="year_level">Year Level</label>
+								{!! Form::select('year_level', [
+											1 => '1st Year',
+											2 => '2nd Year',
+											3 => '3rd Year',
+											4 => '4th Year',
+										], $user->year_level,[
+											'class' => 'form-control'
+										]) !!}
+							</div>
+						</div>
+					@else
+
+						<div class="form-group">
+							<label for="position">Position</label>
+							<input type="text" class="form-control" name="position"
+							value="{{ $user->position }}">
 						</div>
 
-						<div class="form-group col-sm-4">
-							<label for="year_level">Year Level</label>
-							{!! Form::select('year_level', [
-										1 => '1st Year',
-										2 => '2nd Year',
-										3 => '3rd Year',
-										4 => '4th Year',
-									], $user->year_level,[
-										'class' => 'form-control'
-									]) !!}
-						</div>
-					</div>
+					@endif
 
 					<div class="row">
 						<div class="form-group col-sm-6">
