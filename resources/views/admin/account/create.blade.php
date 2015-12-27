@@ -29,7 +29,7 @@
 
 				<div class="form-group col-md-4">
 					<label for="type">Type</label>
-					<select name="type" id="" class="form-control">
+					<select id="acType" name="type" id="" class="form-control">
 						<option value="student">Student</option>		
 						<option value="teacher">Teacher</option>		
 						<option value="programhead">Program Head</option>		
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 
-			<div class="row">
+			<div id="sYl" class="row">
 				<div class="form-group col-sm-8">
 					<label for="section">Section</label>
 					{!!  
@@ -106,6 +106,11 @@
 						<option value="4">4th Year</option>
 					</select>
 				</div>
+			</div>
+
+			<div id="pos" class="form-group">
+				<label for="position">Position</label>
+				<input type="position" class="form-control">
 			</div>
 
 			<div class="row">
