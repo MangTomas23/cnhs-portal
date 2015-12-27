@@ -52,7 +52,7 @@
 						<div class="form-group col-sm-8">
 							<label for="section">Section</label>
 							{!! 
-								Form::select('section', $sections, $user->section_id, [
+								Form::select('section', $sections, $user->section->section_id, [
 								'class' => 'form-control']);
 							!!}
 						</div>

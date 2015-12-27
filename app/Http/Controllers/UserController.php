@@ -43,13 +43,16 @@ class UserController extends Controller
 		$user->firstname = $request->firstname;
 		$user->middlename = $request->middlename;
 		$user->lastname = $request->lastname;
-		$user->section_id = $request->section;
 		$user->year_level = $request->year_level;
 		$user->gender = $request->gender;
 		$user->birthdate = $request->birthdate;
 		$user->address = $request->address;
 		$user->contact = $request->contact;
 		$user->save();
+
+		$section = $user->section;
+		$section->section_id = $request->section;
+		$section->save();
 
 		return Redirect::to('/admin/user/' . $id);
 	}

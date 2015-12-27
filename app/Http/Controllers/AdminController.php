@@ -11,6 +11,7 @@ use Validator;
 use App\User;
 use App\Subject;
 use App\Section;
+use App\StudentSection;
 
 class AdminController extends Controller
 {
@@ -46,16 +47,22 @@ class AdminController extends Controller
 		$user->firstname = $request->firstname;
 		$user->middlename = $request->middlename;
 		$user->lastname = $request->lastname;
-		$user->section_id = $request->section;
 		$user->year_level = $request->yearlevel;
 		$user->gender = $request->gender;
 		$user->birthdate = $request->birthdate;
 		$user->address = $request->address;
 		$user->contact = $request->contact;
 		
+		$user->save();
 
-		return $user->save() ? Redirect::to('/admin/account/create')
-		->with('status', 'Account created successfully.'):'Error';
+		StudentSection::firstOrCreate([
+			'user_id' => $user->id,
+			'section_id' => $request->section
+		]);
+
+
+		return Redirect::to('/admin/account/create')
+		->with('status', 'Account created successfully.');
 
   }
 }
