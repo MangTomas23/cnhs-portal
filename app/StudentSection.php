@@ -11,4 +11,8 @@ class StudentSection extends Model
 	public function section() {
 		return $this->belongsTo('App\Section');
 	}
+
+	public function user() {
+		return $this->belongsTo('App\User');
+	}
 }

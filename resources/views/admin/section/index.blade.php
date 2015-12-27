@@ -43,7 +43,8 @@
 				@foreach($sections as $index => $section)
 					<tr>
 						<td>{{ $index + 1 }}</td>
-						<td>{{ $section->name }}</td>
+						<td><a href="/admin/section/{{ $section->id }}">{{ $section->name }}
+						</a></td>
 						<td>{{ count($section->students) }}</td>
 						<td class="text-right">
 							<a href="/admin/section/edit/{{ $section->id }}">Edit</a> 

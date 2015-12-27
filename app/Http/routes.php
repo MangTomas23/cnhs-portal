@@ -157,6 +157,8 @@ Route::group(['middleware' => 'web'], function () {
             Route::put('{id}', 'SectionController@update');
 
             Route::delete('{id}', 'SectionController@destroy');
+
+            Route::get('{id}', 'SectionController@show');
         });
 
     });

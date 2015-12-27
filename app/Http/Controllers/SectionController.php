@@ -62,7 +62,13 @@ class SectionController extends Controller
     }
 
     public function destroy($id) {
-			Section::destroy($id);    	
+		Section::destroy($id);    	
     	return Redirect::to('/admin/section');
+    }
+
+    public function show($id) {
+        $section = Section::find($id);
+
+        return view('admin.section.show', compact('section'));
     }
 }
