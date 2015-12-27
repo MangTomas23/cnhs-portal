@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
         	'username' => 'admin',
         	'password' => bcrypt('1234567890'),
             'type' => 'admin',
-            'firstname' => ' ',
-            'lastname' => ' ',
+            'firstname' => 'admin',
+            'lastname' => 'admin',
             'gender' => 'm',
         	'birthdate' => '1994-11-13'
         ]);
