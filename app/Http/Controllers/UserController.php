@@ -43,16 +43,24 @@ class UserController extends Controller
 		$user->firstname = $request->firstname;
 		$user->middlename = $request->middlename;
 		$user->lastname = $request->lastname;
-		$user->year_level = $request->year_level;
+
+		if($user->type == 'student') {
+			$user->year_level = $request->year_level;
+		}else {
+			$user->position = $request->position;
+		}
+
 		$user->gender = $request->gender;
 		$user->birthdate = $request->birthdate;
 		$user->address = $request->address;
 		$user->contact = $request->contact;
 		$user->save();
 
-		$section = $user->section;
-		$section->section_id = $request->section;
-		$section->save();
+		if($user->type == 'student') {
+			$section = $user->section;
+			$section->section_id = $request->section;
+			$section->save();
+		}
 
 		return Redirect::to('/admin/user/' . $id);
 	}
