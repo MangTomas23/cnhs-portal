@@ -110,7 +110,7 @@
 
 			<div id="pos" class="form-group">
 				<label for="position">Position</label>
-				<input type="position" class="form-control">
+				<input name="position" type="text" class="form-control">
 			</div>
 
 			<div class="row">
