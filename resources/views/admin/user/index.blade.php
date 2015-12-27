@@ -22,7 +22,18 @@
 				<td>{{ join(' ', [$user->firstname, $user->middlename, $user->lastname]) }}</td>
 				<td>{{ $user->address }}</td>
 				<td>
-					MAPEH, ENGL02
+					@if(count($user->subjects))
+						<?php
+							$subs = array();
+							foreach($user->subjects as $sub){
+							 array_push($subs, $sub->subject->subject_code);
+							}
+						?>
+
+						{{ join(', ', $subs) }}
+					@else
+						No subjects
+					@endif
 				</td>
 			</tr>
 		@endforeach
