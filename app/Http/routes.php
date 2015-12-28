@@ -107,7 +107,7 @@ Route::group(['middleware' => 'web'], function () {
         return view('events');
     });
 
-    Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function () {
         Route::get('account/create', 'AdminController@registrationForm');
 
         Route::post('create', 'AdminController@storeAccount');
