@@ -2,6 +2,48 @@
 
 @section('content')
 
+<div class="row col-sm-8 col-sm-offset-2" style="margin-top:28px">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Subjects</div>
+		<div class="panel-body">
+			<table class="table table-default">
+				<thead>
+					<th>#</th>
+					<th>Subject Code</th>
+					<th>Description</th>
+					<th></th>
+				</thead>
+				<tbody>
+					@if(count($subjects))
+						@foreach($subjects as $index => $subject)
+							<tr>
+								<td>{{ $index + 1 }}</td>
+								<td>{{ $subject->subject->subject_code }}</td>
+								<td>{{ $subject->subject->description }}</td>
+								<td>
+									<a href="/admin/user/{{ $user->id }}/subject/delete/
+									{{ $subject->id }}" style="color:red" title="Remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</a>
+								</td>
+							</tr>
+						@endforeach
+					@else
+						<tr>
+							<td colspan="4">No subjects.</td>
+						</tr>
+					@endif
+				</tbody>
+			</table>
+		</div>
+		<div class="panel-footer text-right">
+			<a href="/admin/user/{{ $user->id }}/subject/add" class="btn btn-info">Add</a>
+			<a href="/admin/user/{{ $user->id }}/subject/delete/all" 
+			class="btn btn-danger">Remove All</a>
+		</div>
+	</div>
+</div>
+
 <div class="row col-sm-8 col-sm-offset-2" style="margin-top: 28px;">
 	<div class="panel panel-info">
 			<div class="panel-heading">
@@ -115,48 +157,6 @@
 				<button class="btn btn-success">Update</button>
 				</form>
 			</div>
-	</div>
-</div>
-
-<div class="row col-sm-8 col-sm-offset-2">
-	<div class="panel panel-default">
-		<div class="panel-heading">Subjects</div>
-		<div class="panel-body">
-			<table class="table table-default">
-				<thead>
-					<th>#</th>
-					<th>Subject Code</th>
-					<th>Description</th>
-					<th></th>
-				</thead>
-				<tbody>
-					@if(count($subjects))
-						@foreach($subjects as $index => $subject)
-							<tr>
-								<td>{{ $index + 1 }}</td>
-								<td>{{ $subject->subject->subject_code }}</td>
-								<td>{{ $subject->subject->description }}</td>
-								<td>
-									<a href="/admin/user/{{ $user->id }}/subject/delete/
-									{{ $subject->id }}" style="color:red" title="Remove">
-										<span class="glyphicon glyphicon-remove"></span>
-									</a>
-								</td>
-							</tr>
-						@endforeach
-					@else
-						<tr>
-							<td colspan="4">No subjects.</td>
-						</tr>
-					@endif
-				</tbody>
-			</table>
-		</div>
-		<div class="panel-footer text-right">
-			<a href="/admin/user/{{ $user->id }}/subject/add" class="btn btn-info">Add</a>
-			<a href="/admin/user/{{ $user->id }}/subject/delete/all" 
-			class="btn btn-danger">Remove All</a>
-		</div>
 	</div>
 </div>
 
