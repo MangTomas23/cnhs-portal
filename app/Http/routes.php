@@ -170,6 +170,12 @@ Route::group(['middleware' => 'web'], function () {
                 return view('teacher.section.index');
             });
         });
+
+        Route::group(['prefix' => 'subject'], function() {
+            Route::get('/', function() {
+                return view('teacher.subject.index');
+            });
+        });
     });
 
     Route::get('developer', function () {
