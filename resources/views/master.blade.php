@@ -71,7 +71,13 @@
                         <li><a href="/admin/subject/register"><i class="fa fa-registered"></i> Register Subject </a></li>
                         <li><a href="/admin/user"><i class="glyphicon glyphicon-eye-open"></i> Users </a></li>
                         <li><a href="/admin/section"><i class="glyphicon glyphicon-eye-open"></i> Sections</a></li>
+                      @else(Auth::user()->type == 'teacher')
+                        <li><a href="/admin/user"><i class="glyphicon glyphicon-eye-open"></i> My Sections</a></li>
+                        <li><a href="/admin/section"><i class="glyphicon glyphicon-eye-open"></i> My Subjects</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/admin/section"><i class="glyphicon glyphicon-eye-open"></i> Input Grades</a></li>
                       @endif
+                      <li class="divider"></li>
                       <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i> Log Out</a></li>
                     </ul>
                 </li>
