@@ -164,7 +164,7 @@ Route::group(['middleware' => 'web'], function () {
 
     });
 
-    Route::group(['prefix' => 'teacher', 'middleware' => 'auth'], function () {
+    Route::group(['prefix' => 'teacher', 'middleware' => ['auth','teacher']], function () {
         Route::group(['prefix' => 'section'], function() {
             Route::get('/', function() {
                 return view('teacher.section.index');
