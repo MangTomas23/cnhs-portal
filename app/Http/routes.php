@@ -133,17 +133,17 @@ Route::group(['middleware' => 'web'], function () {
 
             Route::put('{id}', 'UserController@update');
             
-            Route::get('{id}/subject/add', 'StudentSubjectController@create');
+            Route::get('{id}/subject/add', 'UserSubjectController@create');
 
-            Route::get('{id}/subject/delete/all', 'StudentSubjectController@deleteAll');
+            Route::get('{id}/subject/delete/all', 'UserSubjectController@deleteAll');
             
-            Route::delete('{id}/subject/delete/all', 'StudentSubjectController@destroyAll');
+            Route::delete('{id}/subject/delete/all', 'UserSubjectController@destroyAll');
 
-            Route::get('{id}/subject/delete/{s_id}', 'StudentSubjectController@delete');
+            Route::get('{id}/subject/delete/{s_id}', 'UserSubjectController@delete');
 
-            Route::post('{id}/subject', 'StudentSubjectController@store');
+            Route::post('{id}/subject', 'UserSubjectController@store');
 
-            Route::delete('{id}/subject', 'StudentSubjectController@destroy');
+            Route::delete('{id}/subject', 'UserSubjectController@destroy');
         });
 
         Route::group(['prefix' => 'section'], function () {
