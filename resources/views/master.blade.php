@@ -75,7 +75,7 @@
                         <li><a href="/teacher/section"><i class="glyphicon glyphicon-eye-open"></i> My Sections</a></li>
                         <li><a href="/teacher/subject"><i class="glyphicon glyphicon-eye-open"></i> My Subjects</a></li>
                         <li class="divider"></li>
-                        <li><a href="/teacher/grade"><i class="glyphicon glyphicon-eye-open"></i> Input Grades</a></li>
+                        <li><a href="/teacher/grade/input"><i class="glyphicon glyphicon-eye-open"></i> Input Grades</a></li>
                       @endif
                       <li class="divider"></li>
                       <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i> Log Out</a></li>

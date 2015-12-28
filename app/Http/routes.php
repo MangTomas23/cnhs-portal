@@ -176,6 +176,12 @@ Route::group(['middleware' => 'web'], function () {
                 return view('teacher.subject.index');
             });
         });
+
+        Route::group(['prefix' => 'grade'], function() {
+            Route::get('input', function() {
+                return view('teacher.grade.input');
+            });
+        });
     });
 
     Route::get('developer', function () {
