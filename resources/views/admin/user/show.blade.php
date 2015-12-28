@@ -3,6 +3,8 @@
 @section('content')
 
 <div class="row col-sm-8 col-sm-offset-2" style="margin-top:28px">
+	<h2>Subjects</h2>
+	<hr>
 	<div class="panel panel-primary">
 		<div class="panel-heading">Subjects</div>
 		<div class="panel-body">
@@ -45,6 +47,8 @@
 </div>
 
 <div class="row col-sm-8 col-sm-offset-2" style="margin-top: 28px;">
+	<h2>Account Info</h2>
+	<hr>
 	<div class="panel panel-info">
 			<div class="panel-heading">
 				{{ join(' ', [$user->firstname, $user->middlename, $user->lastname]) }}
