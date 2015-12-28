@@ -15,9 +15,10 @@ use Redirect;
 
 class UserController extends Controller
 {
-	public function index() {
-		$users = User::where('type', '!=', 'admin')->get();
-		return view('admin.user.index', compact('users'));  	
+	public function index(Request $request) {
+		$type = $request->type=='' ? 'student':$request->type;
+		$users = User::where('type', $type)->get();
+		return view('admin.user.index', compact('users', 'type'));  	
 	}
 
 	public function show($id) {

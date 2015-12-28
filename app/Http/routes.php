@@ -136,6 +136,7 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('{id}/subject/add', 'StudentSubjectController@create');
 
             Route::get('{id}/subject/delete/all', 'StudentSubjectController@deleteAll');
+            
             Route::delete('{id}/subject/delete/all', 'StudentSubjectController@destroyAll');
 
             Route::get('{id}/subject/delete/{s_id}', 'StudentSubjectController@delete');
