@@ -36,4 +36,8 @@ class User extends Authenticatable
         return $this->hasOne('App\StudentSection', 'user_id');
     }
 
+    public function sections() {
+        return $this->hasMany('App\TeacherSection', 'user_id');
+    }
+
 }
