@@ -207,4 +207,10 @@ Route::group(['middleware' => 'web'], function () {
 
         return Artisan::output();
     });
+
+    Route::get('developer/run-migrate', function () {
+        Artisan::call('migrate',['--force' => 'y']);
+
+        return Artisan::output();
+    });
 });
