@@ -19,7 +19,7 @@ class CreateTeacherSubjectsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')
             ->onDelete('cascade');
             $table->integer('subject_id')->unsigned();
-            $table->foreign('subject_id')->references('id')->on('users')
+            $table->foreign('subject_id')->references('id')->on('subjects')
             ->onDelete('cascade');
         });
     }
