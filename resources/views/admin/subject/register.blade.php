@@ -31,10 +31,10 @@
 					<div class="form-group col-sm-4">
 						<label for="year_level">Year Level</label>
 						<select name="year_level" class="form-control">
-							<option value="1">1st Year</option>
-							<option value="2">2nd Year</option>
-							<option value="3">3rd Year</option>
-							<option value="4">4th Year</option>
+							<option value="7">Grade 7</option>
+							<option value="8">Grade 8</option>
+							<option value="9">Grade 9</option>
+							<option value="10">Grade 10</option>
 						</select>
 					</div>
 				</div>
