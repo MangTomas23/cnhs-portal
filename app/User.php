@@ -24,8 +24,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    public function subjects() {
+    public function studentSubjects() {
         return $this->hasMany('App\StudentSubject', 'user_id');
+    }
+
+    public function teacherSubjects() {
+        return $this->hasMany('App\TeacherSubject', 'user_id');
     }
 
     public function section() {

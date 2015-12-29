@@ -24,7 +24,10 @@ class UserController extends Controller
 	public function show($id) {
 		$user = User::find($id);
 		$sections = Section::lists('name', 'id');
-		$subjects = $user->subjects;
+
+
+		$subjects = $user->type == 'student' ? $user->studentSubjects:
+		$user->teacherSubjects;	
 
 		return view('admin.user.show', compact('user', 'sections', 'subjects'));
 	}

@@ -8,9 +8,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Subject;
 use App\StudentSubject;
+use App\TeacherSubject;
+use App\User;
 use Redirect;
 
-class StudentSubjectController extends Controller
+class UserSubjectController extends Controller
 {
 	public function create($id) {
 		$subjects = Subject::all();
@@ -20,10 +22,15 @@ class StudentSubjectController extends Controller
 	public function store($id, Request $request) {
 
 		foreach ($request->s_ids as $s_id) {
-			StudentSubject::firstOrCreate([
-				'user_id' => $id,
-				'subject_id' => $s_id
-			]);
+			$data = ['user_id' => $id, 'subject_id' => $s_id];
+			switch(User::find($id)->type) {
+				case 'student':
+					StudentSubject::firstOrCreate($data);
+					break;
+				case 'teacher':
+					TeacherSubject::firstOrCreate($data);
+					break;
+			}
 
 		}
 
@@ -31,12 +38,26 @@ class StudentSubjectController extends Controller
 	}
 
 	public function delete($id, $s_id) {
-		$subject = StudentSubject::find($s_id);
+		switch (User::find($id)->type) {
+			case 'student':
+				$subject = StudentSubject::find($s_id);
+				break;
+			case 'teacher':
+				$subject = TeacherSubject::find($s_id);
+				break;
+		}
 		return view('admin.user.subject.delete', compact('subject','id'));
 	}
 
 	public function destroy($id, Request $request) {
-		StudentSubject::destroy($request->s_id);
+		switch (User::find($id)->type) {
+			case 'student':
+				StudentSubject::destroy($request->s_id);
+				break;
+			case 'teacher':
+				TeacherSubject::destroy($request->s_id);
+				break;
+		}
 		return Redirect::to('/admin/user/' . $id);
 	}
 
@@ -45,7 +66,14 @@ class StudentSubjectController extends Controller
 	}
 
 	public function destroyAll($id) {
-		StudentSubject::where('user_id', $id)->delete();
+		switch (User::find($id)->type) {
+			case 'student':
+				StudentSubject::where('user_id', $id)->delete();
+				break;
+			case 'teacher':
+				TeacherSubject::where('user_id', $id)->delete();
+				break;
+		}
 
 		return Redirect::to('/admin/user/' . $id);
 	}
