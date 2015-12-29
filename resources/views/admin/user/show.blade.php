@@ -145,8 +145,9 @@
 						<div class="row">
 							<div class="form-group col-sm-8">
 								<label for="section">Section</label>
+								<?php $section_id = count($user->section) ? $user->section->section_id:''; ?>
 								{!! 
-									Form::select('section', $sections, $user->section->section_id, [
+									Form::select('section', $sections, $section_id, [
 									'class' => 'form-control']);
 								!!}
 							</div>
