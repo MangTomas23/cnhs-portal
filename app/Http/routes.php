@@ -180,21 +180,15 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::group(['prefix' => 'teacher', 'middleware' => ['auth','teacher']], function () {
         Route::group(['prefix' => 'section'], function() {
-            Route::get('/', function() {
-                return view('teacher.section.index');
-            });
+            Route::get('/', 'TeacherController@section');
         });
 
         Route::group(['prefix' => 'subject'], function() {
-            Route::get('/', function() {
-                return view('teacher.subject.index');
-            });
+            Route::get('/', 'TeacherController@subject');
         });
 
         Route::group(['prefix' => 'grade'], function() {
-            Route::get('input', function() {
-                return view('teacher.grade.input');
-            });
+            Route::get('input', 'TeacherController@input');
         });
     });
 
