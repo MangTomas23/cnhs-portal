@@ -204,13 +204,16 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('developer/run-seed', function () {
         Artisan::call('db:seed',['--force' => 'y']);
-
         return Artisan::output();
     });
 
     Route::get('developer/run-migrate', function () {
         Artisan::call('migrate',['--force' => 'y']);
+        return Artisan::output();
+    });
 
+    Route::get('developer/run-rollback', function () {
+        Artisan::call('migrate:rollback',['--force' => 'y']);
         return Artisan::output();
     });
 });

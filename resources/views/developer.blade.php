@@ -7,5 +7,6 @@
 </div>
 <a href="/developer/run-seed" class="btn btn-primary">Run Seeder</a>
 <a href="/developer/run-migrate" class="btn btn-primary">Run Migrate</a>
+<a href="/developer/run-rollback" class="btn btn-primary">Run Rollback</a>
 
 @endsection
