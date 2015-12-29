@@ -9,8 +9,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Section;
 use App\Subject;
-use App\StudentSection;
 use App\StudentSubject;
+use App\StudentSection;
 use Validator;
 use Redirect;
 
@@ -62,9 +62,9 @@ class UserController extends Controller
 		$user->save();
 
 		if($user->type == 'student') {
-			if(StudentSection::find($request->section) != null) {
+			if(count($user->section)) {
 				$section = $user->section;
-			}else{
+			}else {
 				$section = new StudentSection;
 				$section->user_id = $user->id;
 			}
