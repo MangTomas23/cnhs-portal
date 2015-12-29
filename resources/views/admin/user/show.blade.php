@@ -152,7 +152,7 @@
 							</div>
 
 							<div class="form-group col-sm-4">
-								<label for="year_level">Year Level</label>
+								<label for="year_level">Grade Level</label>
 								{!! Form::select('year_level', [
 											7 => 'Grade 7',
 											8 => 'Grade 8',

@@ -29,7 +29,7 @@
 					</div>
 
 					<div class="form-group col-sm-4">
-						<label for="year_level">Year Level</label>
+						<label for="year_level">Grade Level</label>
 						<select name="year_level" class="form-control">
 							<option value="7">Grade 7</option>
 							<option value="8">Grade 8</option>
@@ -67,7 +67,7 @@
 			<thead>
 				<th>Subject Code</th>
 				<th>Description</th>
-				<th>Year Level</th>
+				<th>Grade Level</th>
 				<th></th>
 			</thead>			
 			<tbody>
