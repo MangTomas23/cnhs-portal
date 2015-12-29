@@ -64,13 +64,13 @@
 					<tbody>
 						@if(count($user->sections))
 							@foreach($user->sections as $i => $section)
-								<?php $section = $section->section; ?>
 								<tr>
 									<td>{{ $i + 1 }}</td>
-									<td>{{ $section->name }}</td>
-									<td>{{ count($section->students) }}</td>
+									<td>{{ $section->section->name }}</td>
+									<td>{{ count($section->section->students) }}</td>
 									<td>
-										<a href="" style="color:#F00;">
+										<a href="/admin/user/{{$user->id}}/section/delete/{{$section->id}}" 
+										style="color:#F00;">
 											<span class="glyphicon glyphicon-remove"></span>
 										</a>
 									</td>
@@ -85,8 +85,8 @@
 				</table>
 			</div>
 			<div class="panel-footer text-right">
-				<a href="/admin/user/{{ $user->id }}/section/add" class="btn btn-info">Add</a>
-				<a href="" class="btn btn-danger">Remove All</a>
+				<a href="/admin/user/{{$user->id}}/section/add" class="btn btn-info">Add</a>
+				<a href="/admin/user/{{$user->id}}/section/delete/all" class="btn btn-danger">Remove All</a>
 			</div>
 		</div>
 	</div>

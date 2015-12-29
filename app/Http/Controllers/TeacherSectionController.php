@@ -23,4 +23,24 @@ class TeacherSectionController extends Controller
 		}
 		return Redirect::to('/admin/user/' . $id);
 	}
+
+	public function delete($id, $s_id) {
+		$section = TeacherSection::find($s_id);
+
+		return view('admin.user.section.delete', compact('section','id'));
+	}
+
+	public function destroy($id, Request $request) {
+		TeacherSection::destroy($request->s_id);
+		return Redirect::to('/admin/user/' . $id);
+	}
+
+	public function deleteAll($id) {
+		return view('admin.user.section.delete-all', compact('id'));
+	}
+
+	public function destroyAll($id) {
+		TeacherSection::where('user_id', $id)->delete();
+		return Redirect::to('/admin/user/' . $id);
+	}
 }

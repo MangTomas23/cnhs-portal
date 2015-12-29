@@ -148,7 +148,15 @@ Route::group(['middleware' => 'web'], function () {
             Route::group(['prefix' => '{id}/section'], function() {
                 Route::get('add', 'TeacherSectionController@add');
 
+                Route::get('delete/all', 'TeacherSectionController@deleteAll');
+
+                Route::get('delete/{s_id}', 'TeacherSectionController@delete');
+
                 Route::post('/', 'TeacherSectionController@store');
+
+                Route::delete('/', 'TeacherSectionController@destroy');
+
+                Route::delete('delete/all', 'TeacherSectionController@destroyAll');
             });
         });
 
