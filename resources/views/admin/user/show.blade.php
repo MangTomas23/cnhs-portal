@@ -46,6 +46,34 @@
 	</div>
 </div>
 
+@if($user->type != 'student')
+
+	<div class="row col-sm-8 col-sm-offset-2" style="margin-top:28px">
+		<h2>Sections</h2>		
+		<hr>
+		<div class="panel panel-primary">
+			<div class="panel-heading">Sections</div>
+			<div class="panel-body">
+				<table class="table table-default">
+					<thead>
+						<th>#</th>
+						<th>Section</th>
+						<th>No of Students</th>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer text-right">
+				<a href="" class="btn btn-info">Add</a>
+				<a href="" class="btn btn-danger">Remove All</a>
+			</div>
+		</div>
+	</div>
+
+@endif
+
 <div class="row col-sm-8 col-sm-offset-2" style="margin-top: 28px;">
 	<h2>Account Info</h2>
 	<hr>
