@@ -61,10 +61,12 @@ class AdminController extends Controller
 		
 		$user->save();
 
-		StudentSection::firstOrCreate([
-			'user_id' => $user->id,
-			'section_id' => $request->section
-		]);
+		if($user->type == 'student') {
+			StudentSection::firstOrCreate([
+				'user_id' => $user->id,
+				'section_id' => $request->section
+			]);
+		}
 
 
 		return Redirect::to('/admin/account/create')
