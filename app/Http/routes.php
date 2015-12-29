@@ -144,6 +144,12 @@ Route::group(['middleware' => 'web'], function () {
             Route::post('{id}/subject', 'UserSubjectController@store');
 
             Route::delete('{id}/subject', 'UserSubjectController@destroy');
+
+            Route::group(['prefix' => '{id}/section'], function() {
+                Route::get('add', 'TeacherSectionController@add');
+
+                Route::post('/', 'TeacherSectionController@store');
+            });
         });
 
         Route::group(['prefix' => 'section'], function () {

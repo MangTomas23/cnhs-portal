@@ -59,27 +59,33 @@
 						<th>#</th>
 						<th>Section</th>
 						<th>No of Students</th>
+						<th></th>
 					</thead>
 					<tbody>
 						@if(count($user->sections))
 							@foreach($user->sections as $i => $section)
 								<?php $section = $section->section; ?>
 								<tr>
-									<td>{{ $i }}</td>
+									<td>{{ $i + 1 }}</td>
 									<td>{{ $section->name }}</td>
 									<td>{{ count($section->students) }}</td>
+									<td>
+										<a href="" style="color:#F00;">
+											<span class="glyphicon glyphicon-remove"></span>
+										</a>
+									</td>
 								</tr>
 							@endforeach
 						@else 
 							<tr>
-								<td colspan="3">No sections.</td>
+								<td colspan="4">No sections.</td>
 							</tr>
 						@endif
 					</tbody>
 				</table>
 			</div>
 			<div class="panel-footer text-right">
-				<a href="" class="btn btn-info">Add</a>
+				<a href="/admin/user/{{ $user->id }}/section/add" class="btn btn-info">Add</a>
 				<a href="" class="btn btn-danger">Remove All</a>
 			</div>
 		</div>
