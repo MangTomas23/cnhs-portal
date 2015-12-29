@@ -61,7 +61,20 @@
 						<th>No of Students</th>
 					</thead>
 					<tbody>
-						
+						@if(count($user->sections))
+							@foreach($user->sections as $i => $section)
+								<?php $section = $section->section; ?>
+								<tr>
+									<td>{{ $i }}</td>
+									<td>{{ $section->name }}</td>
+									<td>{{ count($section->students) }}</td>
+								</tr>
+							@endforeach
+						@else 
+							<tr>
+								<td colspan="3">No sections.</td>
+							</tr>
+						@endif
 					</tbody>
 				</table>
 			</div>
