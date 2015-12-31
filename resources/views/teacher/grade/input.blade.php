@@ -5,10 +5,10 @@
 <h2>Input Grades</h2>
 
 <div class="col-sm-8 col-sm-offset-2">
-	<form action="">
+	<form action="" id="in-g-form">
 		<div class="form-group">
 			<label for="section">Section</label>
-			<select name="section" class="form-control">
+			<select id="in-sec" name="section" class="form-control">
 				@if(count($sections))
 					@foreach($sections as $section)
 						<option value="{{$section->section->id}}">{{$section->section->name}}</option>
@@ -20,7 +20,7 @@
 		</div>
 		<div class="form-group">
 			<label for="subject">Subject</label>
-			<select name="subject" class="form-control">
+			<select id="in-sub" name="subject" class="form-control">
 				@if(count($subjects))
 					@foreach($subjects as $subject)
 						<option value="{{$subject->subject->id}}">{{ $subject->subject->subject_code }}</option>
@@ -52,7 +52,7 @@
 				<th>4th Quarter</th>
 				<th>Average</th>
 			</thead>
-			<tbody>
+			<tbody id="s-list">
 				
 			</tbody>
 		</table>
