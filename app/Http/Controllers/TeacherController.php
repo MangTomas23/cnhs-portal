@@ -17,7 +17,8 @@ class TeacherController extends Controller
 	}
 
 	public function subject() {
-		return view('teacher.subject.index');
+		$subjects = User::find(Auth::user()->id)->teacherSubjects;
+		return view('teacher.subject.index', compact('subjects'));
 	}
 
 	public function input() {
