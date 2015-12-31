@@ -22,6 +22,8 @@ class TeacherController extends Controller
 	}
 
 	public function input() {
-		return view('teacher.grade.input');
+		$sections = User::find(Auth::user()->id)->sections;
+		$subjects = User::find(Auth::user()->id)->teacherSubjects;
+		return view('teacher.grade.input', compact('sections', 'subjects'));
 	}
 }
