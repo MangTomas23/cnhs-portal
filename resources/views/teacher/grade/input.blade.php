@@ -57,8 +57,8 @@
 			</tbody>
 		</table>
 
-		<div class="alert alert-danger">
-			Development. In-progress
+		<div class="alert alert-success">
+			<h1>Happy New Year!</h1>
 		</div>
 	</form>
 </div>
