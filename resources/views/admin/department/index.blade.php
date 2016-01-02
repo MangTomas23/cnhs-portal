@@ -18,7 +18,7 @@
 					<td>{{ $department->name }}</td>
 					<td>{{ $department->program_head }}</td>
 					<td>
-						<a href="">Edit</a>
+						<a href="/admin/department/edit/{{ $department->id }}">Edit</a>
 						<a href="/admin/department/delete/{{ $department->id }}">Delete</a>
 					</td>
 				</tr>

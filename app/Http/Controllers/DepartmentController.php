@@ -45,4 +45,18 @@ class DepartmentController extends Controller
 
 		return Redirect::to('/admin/department');
 	}
+
+	public function edit($id) {
+		$department = Department::find($id);
+		return view('admin.department.edit', compact('department'));
+	}
+
+	public function update(Request $request) {
+		$department = Department::find($request->department_id);		
+		$department->name = $request->name;
+		$department->program_head = $request->program_head;
+		$department->save();
+
+		return Redirect::to('/admin/department');
+	}
 }

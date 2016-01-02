@@ -183,7 +183,11 @@ Route::group(['middleware' => 'web'], function () {
 
             Route::delete('/', 'DepartmentController@destroy');
 
+            Route::put('/', 'DepartmentController@update');
+
             Route::get('/delete/{id}', 'DepartmentController@delete');
+
+            Route::get('/edit/{id}', 'DepartmentController@edit');
         });
 
     });

@@ -18,7 +18,7 @@ class CreateDepartmentsTable extends Migration
             $table->string('name');
             $table->integer('program_head')->unsigned()->nullable();
             $table->foreign('program_head')->references('id')->on('users')
-            ->onDelete('cascade');
+            ->onDelete('cascade')
         });
     }
 
