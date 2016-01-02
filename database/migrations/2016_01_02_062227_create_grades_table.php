@@ -24,10 +24,10 @@ class CreateGradesTable extends Migration
             $table->integer('subject_id')->unsigned();
             $table->foreign('subject_id')->references('id')->on('subjects')
             ->onDelete('cascade');
-            $table->decimal('1st_quarter')->nullable();
-            $table->decimal('2nd_quarter')->nullable();
-            $table->decimal('3rd_quarter')->nullable();
-            $table->decimal('4th_quarter')->nullable();
+            $table->decimal('q1')->nullable();
+            $table->decimal('q2')->nullable();
+            $table->decimal('q3')->nullable();
+            $table->decimal('q4')->nullable();
             $table->decimal('average')->nullable();
             $table->string('school_year');
         });
