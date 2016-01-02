@@ -67,6 +67,7 @@ class TeacherController extends Controller
 			$grade->q4 = $g->q4;
 			$grade->average = $g->ave;
 			$grade->teacher_id = Auth::user()->id;
+			$grade->approved_status = 0;
 			$grade->save();
 		}
 		return Redirect::to('/teacher/grade/input')
