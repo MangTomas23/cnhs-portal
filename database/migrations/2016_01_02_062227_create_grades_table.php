@@ -30,6 +30,7 @@ class CreateGradesTable extends Migration
             $table->decimal('q4')->nullable();
             $table->decimal('average')->nullable();
             $table->string('school_year');
+            $table->integer('approved_status');
         });
     }
 
