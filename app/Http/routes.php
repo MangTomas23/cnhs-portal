@@ -176,6 +176,10 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('{id}', 'SectionController@show');
         });
 
+        Route::group(['prefix' => 'department'], function () {
+            Route::get('/', 'DepartmentController@index');
+        });
+
     });
 
     Route::group(['prefix' => 'teacher', 'middleware' => ['auth','teacher']], function () {

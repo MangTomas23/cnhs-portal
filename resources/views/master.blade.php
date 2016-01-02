@@ -71,6 +71,7 @@
                         <li><a href="/admin/subject/register"><i class="fa fa-registered"></i> Register Subject </a></li>
                         <li><a href="/admin/user"><i class="glyphicon glyphicon-eye-open"></i> Users </a></li>
                         <li><a href="/admin/section"><i class="glyphicon glyphicon-eye-open"></i> Sections</a></li>
+                        <li><a href="/admin/department"><i class="glyphicon glyphicon-eye-open"></i> Departments</a></li>
                       @elseif(Auth::user()->type == 'teacher')
                         <li><a href="/teacher/section"><i class="glyphicon glyphicon-eye-open"></i> My Sections</a></li>
                         <li><a href="/teacher/subject"><i class="glyphicon glyphicon-eye-open"></i> My Subjects</a></li>
