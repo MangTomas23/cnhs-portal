@@ -19,7 +19,7 @@
 					<td>{{ $department->program_head }}</td>
 					<td>
 						<a href="">Edit</a>
-						<a href="">Delete</a>
+						<a href="/admin/department/delete/{{ $department->id }}">Delete</a>
 					</td>
 				</tr>
 			@endforeach

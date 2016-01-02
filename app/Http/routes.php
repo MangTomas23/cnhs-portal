@@ -180,6 +180,10 @@ Route::group(['middleware' => 'web'], function () {
             Route::get('/', 'DepartmentController@index');
 
             Route::post('/', 'DepartmentController@store');
+
+            Route::delete('/', 'DepartmentController@destroy');
+
+            Route::get('/delete/{id}', 'DepartmentController@delete');
         });
 
     });

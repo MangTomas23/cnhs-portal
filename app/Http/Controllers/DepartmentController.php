@@ -32,6 +32,17 @@ class DepartmentController extends Controller
 		$department->program_head = $request->program_head;
 		$department->save();
 
-		return $request->all();
+		return Redirect::to('/admin/department');
+	}
+
+	public function delete($id) {
+		$department = Department::find($id);
+		return view('admin.department.delete', compact('department'));
+	}
+
+	public function destroy(Request $request) {
+		Department::destroy($request->department_id);
+
+		return Redirect::to('/admin/department');
 	}
 }
