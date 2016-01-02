@@ -196,6 +196,10 @@ Route::group(['middleware' => 'web'], function () {
         });
     });
 
+    Route::group(['prefix' => 'student', 'middleware' => 'auth'], function () {
+        Route::get('grades', 'StudentController@index');
+    });
+
     Route::get('developer', function () {
         return view('developer');
     });
