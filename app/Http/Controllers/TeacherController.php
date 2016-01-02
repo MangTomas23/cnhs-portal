@@ -8,7 +8,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Section;
+use App\Grade;
 use Auth;
+use Redirect;
 
 class TeacherController extends Controller
 {
@@ -50,4 +52,25 @@ class TeacherController extends Controller
 
 		return $students->where('valid', true);
 	}
+
+	public function storeGrades(Request $request) {
+		// return $request->all();
+		foreach (json_decode($request->grades) as $i => $g) {
+			$grade = Grade::firstOrNew([
+				'user_id' => $g->user_id, 
+				'subject_id' => $request->subject]);
+
+			$grade->school_year = $request->school_year;
+			$grade->q1 = $g->q1;
+			$grade->q2 = $g->q2;
+			$grade->q3 = $g->q3;
+			$grade->q4 = $g->q4;
+			$grade->average = $g->ave;
+			$grade->teacher_id = Auth::user()->id;
+			$grade->save();
+		}
+		return Redirect::to('/teacher/grade/input')
+		->with('status', 'Records saved successfully. ');
+	}
+
 }

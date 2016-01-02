@@ -190,6 +190,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::group(['prefix' => 'grade'], function() {
             Route::get('input', 'TeacherController@input');
 
+            Route::post('input', 'TeacherController@storeGrades');
+
             Route::get('students', 'TeacherController@students');
         });
     });

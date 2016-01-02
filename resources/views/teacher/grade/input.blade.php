@@ -5,7 +5,13 @@
 <h2>Input Grades</h2>
 
 <div class="col-sm-8 col-sm-offset-2">
-	<form action="" id="in-g-form">
+	@if(session('status'))
+		<div class="alert alert-success">
+			<p>{{ session('status') }}</p>
+		</div>
+	@endif
+	<form action="/teacher/grade/input" id="in-g-form" method="POST">
+		{!! csrf_field() !!}
 		<div class="form-group">
 			<label for="section">Section</label>
 			<select id="in-sec" name="section" class="form-control">
@@ -42,7 +48,7 @@
 
 		<strong>Students</strong>
 
-		<table class="table table-default">
+		<table class="table table-default" style="min-height: 180px;">
 			<thead>
 				<th>#</th>
 				<th>Student Name</th>
@@ -53,9 +59,11 @@
 				<th>Average</th>
 			</thead>
 			<tbody id="s-list">
-				
 			</tbody>
 		</table>
+
+		<input id="in-g" type="hidden" name="grades" >
+		<button class="btn btn-success" style="margin-bottom: 28px">Submit</button>
 	</form>
 </div>
 

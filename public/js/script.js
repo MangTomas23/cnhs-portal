@@ -34,7 +34,7 @@ $(document).ready( function () {
 			var str = '';
 
 			$.each(data, function (i,v) {
-				str += '<tr>';
+				str += '<tr data-user="' + v.user.id + '">';
 				str += '<td>' + (i + 1) + '</td>';
 				str += '<td>' + ([v.user.firstname, v.user.middlename, v.user.lastname].join(' ')) + '</td>';
 				str += '<td>';
@@ -55,7 +55,11 @@ $(document).ready( function () {
 				str += '</tr>';
 			});
 
-			$('#s-list').html(str);
+			if(data.length) {
+				$('#s-list').html(str);
+			}else{
+				$('#s-list').html('<tr><td colspan="7">No Students</td></tr>');
+			}
 		});
 	};
 
@@ -65,6 +69,34 @@ $(document).ready( function () {
 
 		var a = ((parseFloat(cells[0].value) + parseFloat(cells[1].value) + parseFloat(cells[2].value) + parseFloat(cells[3].value))/4);
 		ave.text(a);
+	});
+
+	$('#in-g-form').submit( function (event) {
+		// event.preventDefault();
+		var obj = [];
+
+		var rows = $(this).find('#s-list tr');
+		var hid = $('#in-g');
+
+		$.each(rows, function (i,v) {
+			var cells = [];
+			$.each($(this).find('.inp'), function(i,v) {
+				cells.push(v.value);
+			});
+
+
+
+			obj.push({
+				user_id: $(this).data('user'),
+				q1: cells[0],
+				q2: cells[1],
+				q3: cells[2],
+				q4: cells[3],
+				ave: $(this).find('.ave').text()
+			});
+		});
+
+		hid.val(JSON.stringify(obj));
 	});
 
 	loadStudents();
