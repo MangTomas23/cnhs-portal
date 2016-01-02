@@ -178,6 +178,8 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::group(['prefix' => 'department'], function () {
             Route::get('/', 'DepartmentController@index');
+
+            Route::post('/', 'DepartmentController@store');
         });
 
     });
