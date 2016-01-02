@@ -53,6 +53,13 @@
 					@endif
 				</div>
 
+				<div class="form-group">
+					<label for="department">Department</label>
+					{!! Form::select('department', $departments, $subject->department_id,[
+						'class' => 'form-control'
+					]) !!}
+				</div>
+
 		</div>
 		<div class="panel-footer">
 			<button class="btn btn-primary">Submit</button>

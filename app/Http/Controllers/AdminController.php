@@ -12,6 +12,7 @@ use App\User;
 use App\Subject;
 use App\Section;
 use App\StudentSection;
+use App\Department;
 
 class AdminController extends Controller
 {
@@ -24,8 +25,9 @@ class AdminController extends Controller
 
   public function subjectRegistration() {
   	$subjects = Subject::all();			
+  	$departments = Department::lists('name', 'id');
 
-    return view('admin.subject.register', compact('subjects'));            
+    return view('admin.subject.register', compact('subjects','departments'));            
   }
 
   public function storeAccount(Request $request) {

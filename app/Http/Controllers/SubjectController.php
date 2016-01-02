@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Subject;
+use App\Department;
 use Validator;
 use Redirect;
 
@@ -31,6 +32,7 @@ class SubjectController extends Controller
     	$subject->subject_code = $request->subject_code;
     	$subject->description = $request->description;
     	$subject->year_level = $request->year_level;
+        $subject->department_id = $request->department;
 
     	$subject->save();
 
@@ -39,7 +41,8 @@ class SubjectController extends Controller
 
     public function edit($id) {
     	$subject = Subject::find($id);
-    	return view('admin.subject.edit', compact('subject'));
+        $departments = Department::lists('name', 'id');
+    	return view('admin.subject.edit', compact('subject', 'departments'));
     }
 
     public function update($id, Request $request) {
@@ -60,7 +63,7 @@ class SubjectController extends Controller
     	$subject->subject_code = $request->subject_code;
     	$subject->description = $request->description;
     	$subject->year_level = $request->year_level;
-
+        $subject->department_id = $request->department;
     	$subject->save();
 
     	return Redirect::to('/admin/subject/register');

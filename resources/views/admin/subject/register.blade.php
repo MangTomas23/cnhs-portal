@@ -52,6 +52,13 @@
 					@endif
 				</div>
 
+				<div class="form-group">
+					<label for="department">Department</label>
+					{!! Form::select('department', $departments, null,[
+						'class' => 'form-control'
+					]) !!}
+				</div>
+
 		</div>
 		<div class="panel-footer">
 			<button class="btn btn-primary">Submit</button>
@@ -67,6 +74,7 @@
 			<thead>
 				<th>Subject Code</th>
 				<th>Description</th>
+				<th>Department</th>
 				<th>Grade Level</th>
 				<th></th>
 			</thead>			
@@ -75,6 +83,7 @@
 					<tr>
 						<td>{{ $subject->subject_code }}</td>
 						<td>{{ $subject->description }}</td>
+						<td>{{ count($subject->department) ? $subject->department->name:'' }}</td>
 						<td>{{ $subject->year_level }}</td>
 						<td>
 							<a href="/admin/subject/edit/{{ $subject->id }}">Edit</a> 
