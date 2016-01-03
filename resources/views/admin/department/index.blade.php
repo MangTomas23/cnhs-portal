@@ -16,7 +16,17 @@
 				<tr>
 					<td>{{ $i + 1 }}</td>
 					<td>{{ $department->name }}</td>
-					<td>{{ $department->program_head }}</td>
+					<?php
+						$name = '';
+						if(count($department->programHead)) {
+							if($department->programHead->type == 'programhead') {
+								$name = join(' ', [$department->programHead->firstname, 
+									$department->programHead->middlename,
+									$department->programHead->lastname]);
+							}	
+						}
+					?>
+					<td>{{ $name}}</td>
 					<td>
 						<a href="/admin/department/edit/{{ $department->id }}">Edit</a>
 						<a href="/admin/department/delete/{{ $department->id }}">Delete</a>
@@ -46,13 +56,6 @@
 						<strong>{{$errors->first('name')}}</strong>
 					</span>
 				@endif
-			</div>
-
-			<div class="form-group">
-				<label for="program_head">Program Head</label>
-				<select name="program_head" class="form-control">
-					
-				</select>
 			</div>
 	</div>
 	<div class="panel-footer text-right">

@@ -29,7 +29,6 @@ class DepartmentController extends Controller
 
 		$department = new Department;
 		$department->name = $request->name;
-		$department->program_head = $request->program_head;
 		$department->save();
 
 		return Redirect::to('/admin/department');
@@ -54,7 +53,6 @@ class DepartmentController extends Controller
 	public function update(Request $request) {
 		$department = Department::find($request->department_id);		
 		$department->name = $request->name;
-		$department->program_head = $request->program_head;
 		$department->save();
 
 		return Redirect::to('/admin/department');

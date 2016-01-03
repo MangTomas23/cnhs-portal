@@ -14,13 +14,7 @@
 				<label for="name">Department Name</label>
 				<input class="form-control" type="text" value="{{ $department->name }}"
 				name="name">
-			</div>
-
-			<div class="form-group">
-				<label for="program_head">Program Head</label>
-				<select name="program_head" id="" class="form-control"></select>
-			</div>
-			
+			</div>			
 		</div>
 		<div class="panel-footer text-right">
 			<a href="/admin.department" class="btn btn-default">Cancel</a>
