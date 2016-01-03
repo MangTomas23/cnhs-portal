@@ -11,6 +11,7 @@ use App\Section;
 use App\Subject;
 use App\StudentSubject;
 use App\StudentSection;
+use App\Department;
 use Validator;
 use Redirect;
 
@@ -25,12 +26,13 @@ class UserController extends Controller
 	public function show($id) {
 		$user = User::find($id);
 		$sections = Section::lists('name', 'id');
+		$departments = Department::lists('name', 'id');
 
 
 		$subjects = $user->type == 'student' ? $user->studentSubjects:
 		$user->teacherSubjects;	
 
-		return view('admin.user.show', compact('user', 'sections', 'subjects'));
+		return view('admin.user.show', compact('user', 'sections', 'subjects', 'departments'));
 	}
 
 	public function update($id, Request $request) {
@@ -53,6 +55,7 @@ class UserController extends Controller
 			$user->year_level = $request->year_level;
 		}else {
 			$user->position = $request->position;
+			$user->department_id = $request->department;
 		}
 
 		$user->gender = $request->gender;

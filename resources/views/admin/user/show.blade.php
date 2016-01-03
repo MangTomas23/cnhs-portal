@@ -165,11 +165,21 @@
 							</div>
 						</div>
 					@else
-
-						<div class="form-group">
-							<label for="position">Position</label>
-							<input type="text" class="form-control" name="position"
-							value="{{ $user->position }}">
+						<div class="row">
+							<div class="form-group col-sm-6">
+								<label for="position">Position</label>
+								<input type="text" class="form-control" name="position"
+								value="{{ $user->position }}">
+							</div>
+							
+							<div class="form-group col-sm-6">
+								<label for="department">Department</label>
+								{!! 
+									Form::select('department', $departments, $user->department_id,[
+										'class' => 'form-control'
+									]);
+								!!}
+							</div>
 						</div>
 
 					@endif

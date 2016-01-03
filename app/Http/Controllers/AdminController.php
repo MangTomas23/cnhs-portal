@@ -19,8 +19,9 @@ class AdminController extends Controller
 
   public function registrationForm() {
   	$sections = Section::lists('name', 'id');
+  	$departments = Department::lists('name', 'id');
 
-    return view('admin.account.create', compact('sections'));            
+    return view('admin.account.create', compact('sections', 'departments'));            
   }
 
   public function subjectRegistration() {
@@ -54,6 +55,7 @@ class AdminController extends Controller
 			$user->year_level = $request->yearlevel;
 		}else {
 			$user->position = $request->position;
+			$user->department_id = $request->department;
 		}
 
 		$user->gender = $request->gender;

@@ -107,11 +107,22 @@
 					</select>
 				</div>
 			</div>
+			<div  id="pos" class="row">
+				<div class="form-group col-sm-6">
+					<label for="position">Position</label>
+					<input name="position" type="text" class="form-control">
+				</div>
 
-			<div id="pos" class="form-group">
-				<label for="position">Position</label>
-				<input name="position" type="text" class="form-control">
-			</div>
+				<div class="form-group col-sm-6">
+					<label for="department">Department</label>					
+					{!! 
+						Form::select('department', $departments, old('department'),[
+							'class'=>'form-control'
+						] ); 
+					!!}
+				</div>
+				
+			</div>	
 
 			<div class="row">
 				<div class="form-group col-sm-6">
