@@ -214,22 +214,27 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('grades', 'StudentController@index');
     });
 
-    Route::get('developer', function () {
-        return view('developer');
+    Route::group(['prefix' => 'developer'], function () {
+        Route::get('/', function () {
+            return view('developer');
+        });
+
+        Route::get('run-seed', function () {
+            Artisan::call('db:seed',['--force' => 'y']);
+            return Artisan::output();
+        });
+
+        Route::get('run-migrate', function () {
+            Artisan::call('migrate',['--force' => 'y']);
+            return Artisan::output();
+        });
+
+        Route::get('run-rollback', function () {
+            Artisan::call('migrate:rollback',['--force' => 'y']);
+            return Artisan::output();
+        });
+
+        Route::get('table', 'DeveloperController@getTable');
     });
 
-    Route::get('developer/run-seed', function () {
-        Artisan::call('db:seed',['--force' => 'y']);
-        return Artisan::output();
-    });
-
-    Route::get('developer/run-migrate', function () {
-        Artisan::call('migrate',['--force' => 'y']);
-        return Artisan::output();
-    });
-
-    Route::get('developer/run-rollback', function () {
-        Artisan::call('migrate:rollback',['--force' => 'y']);
-        return Artisan::output();
-    });
 });
