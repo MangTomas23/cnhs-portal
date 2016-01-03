@@ -18,7 +18,9 @@ class TeacherMiddleware
     public function handle($request, Closure $next)
     {
         if(Auth::user()->type != 'teacher') {
-            return Redirect::to('/');
+            if(Auth::user()->type != 'programhead') {
+                return Redirect::to('/');
+            }
         }
         return $next($request);
     }
