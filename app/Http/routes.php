@@ -210,7 +210,7 @@ Route::group(['middleware' => 'web'], function () {
         });
     });
 
-    Route::group(['prefix' => 'student', 'middleware' => 'auth'], function () {
+    Route::group(['prefix' => 'student', 'middleware' => ['auth','student']], function () {
         Route::get('grades', 'StudentController@index');
     });
 
