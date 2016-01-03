@@ -15,7 +15,13 @@ use Redirect;
 class UserSubjectController extends Controller
 {
 	public function create($id) {
-		$subjects = Subject::all();
+		$user = User::find($id);
+
+		if($user->type == 'student') {
+			$subjects = Subject::all();
+		}else{
+			$subjects = Subject::where('department_id', $user->department_id)->get();
+		}
 		return view('admin.user.subject.add', compact('id','subjects'));
 	}
 
