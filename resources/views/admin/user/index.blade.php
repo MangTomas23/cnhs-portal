@@ -7,7 +7,7 @@
   	<a href="/admin/user">Students</a></li>
   <li class="{{ $type=='teacher' ? 'active':'' }}">
   	<a href="/admin/user?type=teacher">Teachers</a></li>
-  <li class="{{ $type=='program_head' ? 'active':'' }}">
+  <li class="{{ $type=='programhead' ? 'active':'' }}">
   	<a href="/admin/user?type=programhead">Program Head</a></li>
 </ul>
 
