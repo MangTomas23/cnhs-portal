@@ -34,6 +34,7 @@ class UserSubjectController extends Controller
 					StudentSubject::firstOrCreate($data);
 					break;
 				case 'teacher':
+				case 'programhead':
 					TeacherSubject::firstOrCreate($data);
 					break;
 			}
@@ -49,6 +50,7 @@ class UserSubjectController extends Controller
 				$subject = StudentSubject::find($s_id);
 				break;
 			case 'teacher':
+			case 'programhead':
 				$subject = TeacherSubject::find($s_id);
 				break;
 		}
@@ -61,6 +63,7 @@ class UserSubjectController extends Controller
 				StudentSubject::destroy($request->s_id);
 				break;
 			case 'teacher':
+			case 'programhead':
 				TeacherSubject::destroy($request->s_id);
 				break;
 		}
@@ -77,6 +80,7 @@ class UserSubjectController extends Controller
 				StudentSubject::where('user_id', $id)->delete();
 				break;
 			case 'teacher':
+			case 'programhead':
 				TeacherSubject::where('user_id', $id)->delete();
 				break;
 		}
