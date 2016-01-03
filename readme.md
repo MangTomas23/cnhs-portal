@@ -28,4 +28,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## CNHS
 
-Calabanga National High School [Portal](https:://cnhsportal.herokuapp.com)
+Calabanga National High School [Portal](https://cnhsportal.herokuapp.com)
