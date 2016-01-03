@@ -214,6 +214,10 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('grades', 'StudentController@index');
     });
 
+    Route::group(['prefix' => 'programhead'], function () {
+        Route::get('approve', 'ProgramHeadController@index');
+    });
+
     Route::group(['prefix' => 'developer'], function () {
         Route::get('/', function () {
             return view('developer');

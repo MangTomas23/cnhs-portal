@@ -62,7 +62,8 @@
               @else
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                      {{ ucfirst(Auth::user()->type)}}<span class="caret"></span>
+                      {{ Auth::user()->type == 'programhead' ? 'Program Head':
+                      ucfirst(Auth::user()->type)}}<span class="caret"></span>
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
@@ -72,11 +73,16 @@
                         <li><a href="/admin/user"><i class="glyphicon glyphicon-eye-open"></i> Users </a></li>
                         <li><a href="/admin/section"><i class="glyphicon glyphicon-eye-open"></i> Sections</a></li>
                         <li><a href="/admin/department"><i class="glyphicon glyphicon-eye-open"></i> Departments</a></li>
-                      @elseif(Auth::user()->type == 'teacher')
+                      @elseif(Auth::user()->type == 'teacher' || Auth::user()->type == 'programhead')
                         <li><a href="/teacher/section"><i class="glyphicon glyphicon-eye-open"></i> My Sections</a></li>
                         <li><a href="/teacher/subject"><i class="glyphicon glyphicon-eye-open"></i> My Subjects</a></li>
                         <li class="divider"></li>
                         <li><a href="/teacher/grade/input"><i class="glyphicon glyphicon-eye-open"></i> Input Grades</a></li>
+
+                        @if(Auth::user()->type == 'programhead')
+                          <li class="divider"></li>
+                          <li><a href="/programhead/approve"><i class="glyphicon glyphicon-eye-open"></i> Approve Grades</a></li>
+                        @endif
                       @elseif(Auth::user()->type == 'student')
                         <li><a href="/student/grades"><i class="glyphicon glyphicon-eye-open"></i> Grades</a></li>
                       @endif

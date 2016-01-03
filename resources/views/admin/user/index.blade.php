@@ -8,7 +8,7 @@
   <li class="{{ $type=='teacher' ? 'active':'' }}">
   	<a href="/admin/user?type=teacher">Teachers</a></li>
   <li class="{{ $type=='program_head' ? 'active':'' }}">
-  	<a href="/admin/user?type=program_head">Program Head</a></li>
+  	<a href="/admin/user?type=programhead">Program Head</a></li>
 </ul>
 
 <table class="table table-default">
