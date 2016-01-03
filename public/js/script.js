@@ -100,4 +100,12 @@ $(document).ready( function () {
 	});
 
 	loadStudents();
+
+	$('#select-all').change( function () {
+		var checkboxes = $(this).closest('table').find('tbody input[type=checkbox]');
+		var status = this.checked;
+		$.each(checkboxes, function() {
+			this.checked = status;
+		});
+	});
 });

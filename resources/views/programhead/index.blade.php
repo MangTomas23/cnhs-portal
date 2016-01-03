@@ -5,7 +5,7 @@
 	{!! csrf_field() !!}
 	<table class="table table-default" style="min-height: 280px">
 		<thead>
-			<th><input type="checkbox"></th>
+			<th><input id="select-all" type="checkbox"></th>
 			<th>Subject Code</th>
 			<th>Student Name</th>
 			<th>1st Quarter</th>
