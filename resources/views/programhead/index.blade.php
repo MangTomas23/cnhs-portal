@@ -1,6 +1,13 @@
 @extends('master')
 
 @section('content')
+
+@if(session('status'))
+	<div class="alert alert-success">
+		<p>{{ session('status') }}</p>
+	</div>
+@endif
+
 <form action="/programhead/approve" method="POST">
 	{!! csrf_field() !!}
 	<table class="table table-default" style="min-height: 280px">

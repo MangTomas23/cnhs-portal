@@ -216,6 +216,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::group(['prefix' => 'programhead'], function () {
         Route::get('approve', 'ProgramHeadController@index');
+
+        Route::post('approve', 'ProgramHeadController@approveGrades');
     });
 
     Route::group(['prefix' => 'developer'], function () {
