@@ -235,6 +235,8 @@ Route::group(['middleware' => 'web'], function () {
         });
 
         Route::get('table', 'DeveloperController@getTable');
+
+        Route::post('seed', 'DeveloperController@seed');
     });
 
 });
