@@ -32,10 +32,9 @@ $(document).ready( function () {
 			subject: subject
 		}, function(data) {
 			var str = '';
-
 			$.each(data, function (i,v) {
 				str += '<tr data-user="' + v.user.id + '">';
-				str += '<td>' + (i + 1) + '</td>';
+				str += '<td>' + i + '</td>';
 				str += '<td>' + ([v.user.firstname, v.user.middlename, v.user.lastname].join(' ')) + '</td>';
 				str += '<td>';
 				str += '<input class="form-control inp" value="0">';
@@ -55,7 +54,7 @@ $(document).ready( function () {
 				str += '</tr>';
 			});
 
-			if(data.length) {
+			if(data.length != 0) {
 				$('#s-list').html(str);
 			}else{
 				$('#s-list').html('<tr><td colspan="7">No Students</td></tr>');

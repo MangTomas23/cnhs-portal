@@ -37,13 +37,14 @@ class TeacherController extends Controller
 		$students = Section::find($section_id)->students;
 
 		foreach ($students as $i => $student) {
-			$student->user;
 			$studentSubjects = $student->user->studentSubjects;
-
+			
 			$found = false;
-			foreach ($studentSubjects as $subject) {
-				if($subject->subject_id == $subject_id) {
-					$found = true;
+			if(count($studentSubjects)) {
+				foreach ($studentSubjects as $subject) {
+					if($subject->subject_id == $subject_id) {
+						$found = true;
+					}
 				}
 			}
 
