@@ -30,10 +30,10 @@
 				<td>{{ $user->address }}</td>
 				@if($type=='student')
 					<td>
-						@if(count($user->subjects))
+						@if(count($user->studentSubjects))
 							<?php
 								$subs = array();
-								foreach($user->subjects as $sub){
+								foreach($user->studentSubjects as $sub){
 								 array_push($subs, $sub->subject->subject_code);
 								}
 							?>
