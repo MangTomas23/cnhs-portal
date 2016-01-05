@@ -17,7 +17,7 @@
 			</div>			
 		</div>
 		<div class="panel-footer text-right">
-			<a href="/admin.department" class="btn btn-default">Cancel</a>
+			<a href="/admin/department" class="btn btn-default">Cancel</a>
 			<button class="btn btn-success">Submit</button>
 			</form>
 		</div>
