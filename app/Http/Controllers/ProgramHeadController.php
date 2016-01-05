@@ -17,7 +17,7 @@ class ProgramHeadController extends Controller
 		$subjects = Subject::where('department_id', 
 			Auth::user()->department_id)->lists('id');
 
-		$grades = Grade::where('approved_status', 1)
+		$grades = Grade::where('approved_status', 0)
 		->whereIn('subject_id', $subjects)->get();
 
 		return view('programhead.index', compact('grades'));		
