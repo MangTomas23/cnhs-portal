@@ -18,12 +18,11 @@
 					<td>{{ $department->name }}</td>
 					<?php
 						$name = '';
-						if(count($department->programHead)) {
-							if($department->programHead->type == 'programhead') {
-								$name = join(' ', [$department->programHead->firstname, 
-									$department->programHead->middlename,
-									$department->programHead->lastname]);
-							}	
+						$user = App\User::where(['type' => 'programhead', 'department_id' => 
+							$department->id])->first();
+						if(count($user)) {
+							$name = join(' ', [$user->firstname, $user->middlename,
+								$user->lastname]);
 						}
 					?>
 					<td>{{ $name}}</td>
