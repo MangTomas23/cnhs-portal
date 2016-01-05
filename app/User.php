@@ -43,4 +43,8 @@ class User extends Authenticatable
     public function grades() {
         return $this->hasMany('App\Grade');
     }
+
+    public function department() {
+        return $this->belongsTo('App\Department');
+    }
 }

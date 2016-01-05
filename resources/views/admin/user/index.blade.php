@@ -19,6 +19,7 @@
 		@if($type=='student')
 			<th>Subjects</th>
 		@else
+			<th>Department</th>
 			<th>Position</th>
 		@endif
 	</thead>
@@ -44,6 +45,7 @@
 						@endif
 					</td>
 				@else
+					<td>{{$user->department->name}}</td>
 					<td>{{$user->position}}</td>
 				@endif
 			</tr>
