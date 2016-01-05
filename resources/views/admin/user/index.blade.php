@@ -45,7 +45,9 @@
 						@endif
 					</td>
 				@else
-					<td>{{$user->department->name}}</td>
+					@if(count($user->department))
+						<td>{{$user->department->name}}</td>
+					@endif
 					<td>{{$user->position}}</td>
 				@endif
 			</tr>
