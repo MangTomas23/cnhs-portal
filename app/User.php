@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class User extends Authenticatable
 {
+    use SearchableTrait;
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +24,17 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    protected $searchable = [
+        'columns' => [
+            'users.firstname' => 10,
+            'users.middlename' => 10,
+            'users.lastname' => 10,
+            'users.username' => 10,
+            'users.address' => 10,
+            'users.contact' => 10,
+        ],
     ];
     
     public function studentSubjects() {

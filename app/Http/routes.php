@@ -128,6 +128,8 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::group(['prefix' => 'user'], function () {
             Route::get('/', 'UserController@index');
+            
+            Route::get('search', 'AdminController@search');
 
             Route::get('{id}', 'UserController@show');
 

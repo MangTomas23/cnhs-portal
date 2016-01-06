@@ -106,4 +106,10 @@ class AdminController extends Controller
 
     return $randomPass;
   }
+
+  public function search(Request $request) {
+  	$users = User::search($request['query'])->get();
+  	$type = 'search';
+  	return view('admin.user.index', compact('users', 'type'));
+  }
 }
