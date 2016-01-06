@@ -22,6 +22,7 @@
 			<th>Department</th>
 			<th>Position</th>
 		@endif
+		<th>Password</th>
 	</thead>
 	<tbody>
 		@foreach($users as $user)
@@ -50,6 +51,7 @@
 					@endif
 					<td>{{$user->position}}</td>
 				@endif
+				<td>{{count($user->tpassword) ? $user->tpassword->password:''}}</td>
 			</tr>
 		@endforeach
 	</tbody>
