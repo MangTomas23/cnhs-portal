@@ -39,21 +39,14 @@
 
 			<div class="form-group {{ $errors->has('password') ? 'has-error':'' }}">
 				<label for="password">Password</label>
-				<input type="password" name="password" class="form-control" 
-				placeholder="Enter Password">
+				<input type="text" name="password" class="form-control" 
+				placeholder="Enter Password" value="{{ $password }}">
 				@if ($errors->has('password'))
             <span class="help-block">
                 <strong>{{ $errors->first('password') }}</strong>
             </span>
         @endif
 			</div>
-
-			<div class="form-group">
-				<label for="password_confirmation">Confirm Password</label>
-				<input type="password" name="password_confirmation" class="form-control"
-				placeholder="Re-enter Password">
-			</div>
-
 
 			<h3>Basic Information</h3>
 			<hr>
