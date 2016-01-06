@@ -21,7 +21,10 @@ class AdminController extends Controller
   	$sections = Section::lists('name', 'id');
   	$departments = Department::lists('name', 'id');
 
-    return view('admin.account.create', compact('sections', 'departments'));            
+  	$password = $this->generatePassword();
+
+    return view('admin.account.create', compact('sections', 'departments', 
+    	'password'));            
   }
 
   public function subjectRegistration() {
@@ -76,5 +79,25 @@ class AdminController extends Controller
 		return Redirect::to('/admin/account/create')
 		->with('status', 'Account created successfully.');
 
+  }
+
+  public function generatePassword() {
+  	$keyspace = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  	$length = 3;
+    $str = '';
+    $max = mb_strlen($keyspace, '8bit') - 1;
+    for ($i = 0; $i < $length; ++$i) {
+        $str .= $keyspace[random_int(0, $max)];
+    }
+    // return $str;
+
+    $n1 = rand(1,9) * 100;
+    $n2 = rand(1,9) * 100;
+
+    // return $n1 * 100;
+
+    $randomPass = $str . $n1 . $n2;
+
+    return $randomPass;
   }
 }
