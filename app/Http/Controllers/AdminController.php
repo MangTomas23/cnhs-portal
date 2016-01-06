@@ -13,6 +13,7 @@ use App\Subject;
 use App\Section;
 use App\StudentSection;
 use App\Department;
+use App\TemporaryPassword;
 
 class AdminController extends Controller
 {
@@ -37,7 +38,7 @@ class AdminController extends Controller
   public function storeAccount(Request $request) {
 		$validator = Validator::make($request->all(),[
 			'username' => 'required|unique:users',
-			'password' => 'required|confirmed|min:6',
+			'password' => 'required|min:6',
 			'firstname' => 'required|max:255',
 			'lastname' => 'required|max:255',
 		]);
@@ -74,6 +75,11 @@ class AdminController extends Controller
 				'section_id' => $request->section
 			]);
 		}
+
+		$temporaryPassword = new TemporaryPassword;
+		$temporaryPassword->user_id = $user->id;
+		$temporaryPassword->password = $request->password;
+		$temporaryPassword->save();
 
 
 		return Redirect::to('/admin/account/create')
