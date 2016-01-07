@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b069023ff3f7090b3fee4dc80371188",
-    "content-hash": "2164d53d03f559b8a58f55fa40991ed2",
+    "hash": "6fde89c4ccd5c29559375743c4e7bfcd",
+    "content-hash": "563976b3cf33f6b62bd9ae2c871d53e9",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -742,16 +742,16 @@
         },
         {
             "name": "nicolaslopezj/searchable",
-            "version": "1.7.0",
+            "version": "dev-dev-patch-1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nicolaslopezj/searchable.git",
-                "reference": "2d264e493a9a93396b9cfed0290802d5aab8f921"
+                "url": "https://github.com/MangTomas23/searchable.git",
+                "reference": "ab6d39e99e59f22056ea1f69b35b9b6c70b424c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/2d264e493a9a93396b9cfed0290802d5aab8f921",
-                "reference": "2d264e493a9a93396b9cfed0290802d5aab8f921",
+                "url": "https://api.github.com/repos/MangTomas23/searchable/zipball/ab6d39e99e59f22056ea1f69b35b9b6c70b424c1",
+                "reference": "ab6d39e99e59f22056ea1f69b35b9b6c70b424c1",
                 "shasum": ""
             },
             "require": {
@@ -765,7 +765,6 @@
                     "Nicolaslopezj\\Searchable\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -784,7 +783,10 @@
                 "search",
                 "searchable"
             ],
-            "time": "2015-12-01 17:37:59"
+            "support": {
+                "source": "https://github.com/MangTomas23/searchable/tree/dev-patch-1"
+            },
+            "time": "2016-01-07 03:52:35"
         },
         {
             "name": "nikic/php-parser",
@@ -3103,7 +3105,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nicolaslopezj/searchable": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

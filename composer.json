@@ -4,11 +4,17 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/MangTomas23/searchable"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "^5.2",
-        "nicolaslopezj/searchable": "^1.7"
+        "nicolaslopezj/searchable": "dev-dev-patch-1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
