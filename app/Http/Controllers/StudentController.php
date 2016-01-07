@@ -11,6 +11,7 @@ class StudentController extends Controller
 {
 	public function index() {
 		$grades =  Auth::user()->grades->where('approved_status', 1);
-		return view('student.index', compact('grades'));
+		$user = Auth::user();
+		return view('student.index', compact('grades', 'user'));
 	}
 }
