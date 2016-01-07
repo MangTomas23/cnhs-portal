@@ -4,7 +4,7 @@
 
 <div class="jumbotron">
 	
-	<h2> Calabanga National Highscool is now accepting senior high ! </h2>
+	<h2> Calabanga National High School is now accepting senior high! </h2>
 
   <h3> Academic track </h3>
 
