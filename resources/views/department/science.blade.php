@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('department.menu')
+
 	<p>
 
 
