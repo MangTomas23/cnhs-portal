@@ -8,7 +8,7 @@
 	</div>
 @endif
 
-<form action="/programhead/approve" method="POST">
+<form id="frmApprove" action="/programhead/approve" method="POST">
 	{!! csrf_field() !!}
 	<table class="table table-default" style="min-height: 280px">
 		<thead>
@@ -45,6 +45,7 @@
 	</table>
 
 	<div class="row text-center">
+		<button id="del-g" class="btn btn-danger">Delete</button>
 		<button class="btn btn-primary">Approve</button>
 	</div>
 </form>

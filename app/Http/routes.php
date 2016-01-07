@@ -223,6 +223,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::group(['prefix' => 'programhead'], function () {
         Route::get('approve', 'ProgramHeadController@index');
 
+        Route::post('delete', 'ProgramHeadController@delete');
+
+        Route::delete('delete', 'ProgramHeadController@destroy');
+
         Route::post('approve', 'ProgramHeadController@approveGrades');
     });
 

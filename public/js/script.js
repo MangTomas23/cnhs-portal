@@ -107,4 +107,13 @@ $(document).ready( function () {
 			this.checked = status;
 		});
 	});
+
+	$('#del-g').click( function () {
+		var form = $('#frmApprove');
+
+		form.attr('action', '/programhead/delete');
+		// $('#frmApprove').submit( function (event) {
+		// 	event.preventDefault();
+		// });
+	});
 });

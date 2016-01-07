@@ -32,4 +32,14 @@ class ProgramHeadController extends Controller
 		return Redirect::to('/programhead/approve')->with('status', 
 			count($request->g_id) . ' items approved.');
 	}
+
+	public function delete(Request $request) {
+		$grades = $request->g_id;
+		return view('programhead.delete', compact('grades'));
+	}
+
+	public function destroy(Request $request) {
+		Grade::destroy(json_decode($request->grades));
+		return Redirect::to('/programhead/approve');
+	}
 }
