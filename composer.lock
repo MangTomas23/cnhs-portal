@@ -746,12 +746,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MangTomas23/searchable.git",
-                "reference": "ab6d39e99e59f22056ea1f69b35b9b6c70b424c1"
+                "reference": "020db05c66d1f6e9c0abcf23cb86a91b521c152b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MangTomas23/searchable/zipball/ab6d39e99e59f22056ea1f69b35b9b6c70b424c1",
-                "reference": "ab6d39e99e59f22056ea1f69b35b9b6c70b424c1",
+                "url": "https://api.github.com/repos/MangTomas23/searchable/zipball/020db05c66d1f6e9c0abcf23cb86a91b521c152b",
+                "reference": "020db05c66d1f6e9c0abcf23cb86a91b521c152b",
                 "shasum": ""
             },
             "require": {
@@ -786,7 +786,7 @@
             "support": {
                 "source": "https://github.com/MangTomas23/searchable/tree/dev-patch-1"
             },
-            "time": "2016-01-07 03:52:35"
+            "time": "2016-01-07 07:06:01"
         },
         {
             "name": "nikic/php-parser",
