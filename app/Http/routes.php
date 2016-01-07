@@ -128,6 +128,8 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::group(['prefix' => 'user'], function () {
             Route::get('/', 'UserController@index');
+
+            Route::delete('/', 'UserController@destroy');
             
             Route::get('search', 'AdminController@search');
 
@@ -146,6 +148,8 @@ Route::group(['middleware' => 'web'], function () {
             Route::post('{id}/subject', 'UserSubjectController@store');
 
             Route::delete('{id}/subject', 'UserSubjectController@destroy');
+
+            Route::get('{id}/delete', 'UserController@delete');
 
             Route::group(['prefix' => '{id}/section'], function() {
                 Route::get('add', 'TeacherSectionController@add');

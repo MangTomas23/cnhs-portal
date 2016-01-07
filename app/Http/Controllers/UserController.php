@@ -77,4 +77,14 @@ class UserController extends Controller
 
 		return Redirect::to('/admin/user/' . $id);
 	}
+
+	public function delete($id) {
+		$user = User::find($id);
+		return view('admin.user.delete', compact('user'));
+	}
+
+	public function destroy(Request $request) {
+		User::destroy($request->id);
+		return Redirect::to('/admin/user');
+	}
 }

@@ -216,6 +216,7 @@
 
 			</div>
 			<div class="panel-footer text-right">
+				<a href="/admin/user/{{ $user->id }}/delete" class="btn btn-danger">Delete</a>
 				<button class="btn btn-success">Update</button>
 				</form>
 			</div>
