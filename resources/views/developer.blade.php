@@ -31,4 +31,31 @@
 	</form>
 </div>
 
+<form action="/developer" method="POST">
+	{!! csrf_field() !!}
+	<table class="table table-default">
+		<thead>
+			<th>Username</th>
+			<th>Password</th>
+		</thead>
+		<tbody>
+			@foreach($users as $i => $user)
+				<tr>
+					<td>{{ $user->username }}</td>
+					@if(count($user->tpassword))
+						<td>{{ $user->tpassword->password }}</td>
+					@else
+						<td>
+							<input name="passwords[]" type="text" class="form-control" value="{{ $passwords[$i] }}">
+						</td>
+					@endif
+					
+				</tr>
+			@endforeach
+		</tbody>
+	</table>
+
+<button class="btn btn-primary">Save Passwords</button>
+</form>
+
 @endsection

@@ -231,9 +231,9 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::group(['prefix' => 'developer'], function () {
-        Route::get('/', function () {
-            return view('developer');
-        });
+        Route::get('/', 'DeveloperController@index');
+
+        Route::post('/', 'DeveloperController@store');
 
         Route::get('run-seed', function () {
             Artisan::call('db:seed',['--force' => 'y']);
