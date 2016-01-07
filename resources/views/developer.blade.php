@@ -42,14 +42,9 @@
 			@foreach($users as $i => $user)
 				<tr>
 					<td>{{ $user->username }}</td>
-					@if(count($user->tpassword))
-						<td>{{ $user->tpassword->password }}</td>
-					@else
-						<td>
-							<input name="passwords[]" type="text" class="form-control" value="{{ $passwords[$i] }}">
-						</td>
-					@endif
-					
+					<td>
+						<input name="passwords[]" type="text" class="form-control" value="{{ $passwords[$i] }}">
+					</td>
 				</tr>
 			@endforeach
 		</tbody>
