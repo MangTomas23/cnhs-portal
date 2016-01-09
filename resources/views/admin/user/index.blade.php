@@ -40,37 +40,43 @@ method="GET" style="margin-top: 28px">
 		<th>Password</th>
 	</thead>
 	<tbody>
-		@foreach($users as $user)
+		@if($type == 'search' && !count($users))
 			<tr>
-				<td><a href="/admin/user/{{ $user->id }}">{{ $user->username }}</a></td>
-				<td>{{ join(' ', [$user->firstname, $user->middlename, $user->lastname]) }}</td>
-				<td>{{ $user->address }}</td>
-				@if($type!='search')
-					@if($type=='student')
-						<td>
-							@if(count($user->studentSubjects))
-								<?php
-									$subs = array();
-									foreach($user->studentSubjects as $sub){
-									 array_push($subs, $sub->subject->subject_code);
-									}
-								?>
-
-								{{ join(', ', $subs) }}
-							@else
-								No subjects
-							@endif
-						</td>
-					@else
-						@if(count($user->department))
-							<td>{{$user->department->name}}</td>
-						@endif
-						<td>{{$user->position}}</td>
-					@endif
-				@endif
-				<td>{{count($user->tpassword) ? $user->tpassword->password:''}}</td>
+				<td colspan="4">No result found</td>
 			</tr>
-		@endforeach
+		@else
+			@foreach($users as $user)
+				<tr>
+					<td><a href="/admin/user/{{ $user->id }}">{{ $user->username }}</a></td>
+					<td>{{ join(' ', [$user->firstname, $user->middlename, $user->lastname]) }}</td>
+					<td>{{ $user->address }}</td>
+					@if($type!='search')
+						@if($type=='student')
+							<td>
+								@if(count($user->studentSubjects))
+									<?php
+										$subs = array();
+										foreach($user->studentSubjects as $sub){
+										 array_push($subs, $sub->subject->subject_code);
+										}
+									?>
+
+									{{ join(', ', $subs) }}
+								@else
+									No subjects
+								@endif
+							</td>
+						@else
+							@if(count($user->department))
+								<td>{{$user->department->name}}</td>
+							@endif
+							<td>{{$user->position}}</td>
+						@endif
+					@endif
+					<td>{{count($user->tpassword) ? $user->tpassword->password:''}}</td>
+				</tr>
+			@endforeach
+		@endif
 	</tbody>
 </table>
 
